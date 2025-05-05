@@ -74,8 +74,7 @@ export const NavLinksContent = styled.div`
    @media(max-width: 990px){
       flex-direction: column;
       justify-content: space-around;
-      background: linear-gradient(to right, ${props => props.theme['sky-900']}, transparent);
-      box-shadow: 2px 2px 2px 2px ${props => props.theme['sky-900']} ;
+      background: ${props => props.theme['gray-700']};
       width: 100%;
       height: 270px;
       position: absolute;
@@ -84,6 +83,7 @@ export const NavLinksContent = styled.div`
       left: 0;
       right: 0;
       transition: all 0.3s;
+     
 
       &.open{
          top: 90px;

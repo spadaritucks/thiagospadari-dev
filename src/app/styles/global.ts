@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body{
-   background: linear-gradient(to right, ${props => props.theme['blue-900']}, ${props => props.theme['sky-900']});
+   background-color: ${props => props.theme['gray-700']};
  }
 
 
