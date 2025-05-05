@@ -1,8 +1,9 @@
 'use client'
 
-import { NavBar } from "@/components/Navbar/component";
-import { Main } from "../components/Main/component";
-import { AboutMe } from "@/components/About-me/component";
+import { NavBar } from "@/components/navbar/component";
+import { Main } from "../components/main/component";
+import { AboutMe } from "@/components/about-me/component";
+import { Skills } from "@/components/skills/component";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <NavBar />
       <Main/>
       <AboutMe/>
+      <Skills/>
 
 
     </>

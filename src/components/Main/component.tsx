@@ -13,7 +13,7 @@ export function Main() {
       <HomeTextContent>
         <h2>
           <span className="typing typing-1">
-            Olá, eu sou o o&nbsp; <span style={{ color: "#3b82f6" }}>Thiago Spadari</span>
+            Olá, eu sou o&nbsp; <span style={{ color: "#3b82f6" }}>Thiago Spadari</span>
           </span>
         </h2>
         <p>

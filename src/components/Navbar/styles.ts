@@ -99,7 +99,7 @@ export const ButtonAdminPanelLogin = styled.button`
   
   padding: 5px 15px;
   font-size: 1rem;
-  background-color: ${props => props.theme['blue-700']};
+  background-color: ${props => props.theme['blue-500']};
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -110,6 +110,8 @@ export const ButtonAdminPanelLogin = styled.button`
   }
 
   &:hover{
-   background-color: ${props => props.theme['blue-900']};
+   background-color: ${props => props.theme['blue-700']};
+   transform: scale(0.95);
+   transition: all 0.4s;
   }
 `

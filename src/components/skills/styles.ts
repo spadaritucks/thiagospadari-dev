@@ -1,0 +1,35 @@
+import styled from "styled-components";
+
+export const SkillsContent = styled.section`
+   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+
+   width: 100%;
+   max-height: 200vh;
+
+   
+ h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: ${props => props.theme['white']}
+ }
+
+ 
+
+`
+
+
+export const SkillsGridContent = styled.div`
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+   width: 90%;
+  
+    
+
+`
