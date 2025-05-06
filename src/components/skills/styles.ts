@@ -9,8 +9,9 @@ export const SkillsContent = styled.section`
    gap: 30px;
 
    width: 100%;
-   max-height: 200vh;
-
+   max-height: 400vh;
+   margin-top: 4rem;
+   margin-bottom: 4rem;
    
  h2{
     font-size: 2rem;

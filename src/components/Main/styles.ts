@@ -19,7 +19,7 @@ export const HomeContent = styled.section`
 
   img:hover {
     transform: scale(1.1);
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
 
 
