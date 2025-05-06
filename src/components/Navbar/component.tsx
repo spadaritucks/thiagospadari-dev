@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import { ButtonAdminPanelLogin, DevTitle, NavContent, NavLinksContent } from "./styles";
 import { useState } from "react";
@@ -24,7 +25,7 @@ export function NavBar() {
                 <Link href="">Projects</Link>
             </NavLinksContent>
             <ButtonAdminPanelLogin>
-                <Link href="">Login Admin</Link>
+                <Link href="/login">Login Admin</Link>
             </ButtonAdminPanelLogin>
 
             {isOpenMobileNavBar ? <X onClick={ClickOpenMobileNavBar} /> : <Menu onClick={ClickOpenMobileNavBar}/>}
