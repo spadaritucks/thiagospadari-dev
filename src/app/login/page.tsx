@@ -1,9 +1,15 @@
 'use client'
 import { NavBar } from "@/components/navbar/component";
-import { LoginContent, LoginFooter, LoginForm, LoginSection, SubmitButton } from "./styles";
-import { Input } from "@/components/input/component";
+import { LoginContent, LoginSection } from "./styles";
+import { LoginForm } from "./loginForm/component";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+
+
 
 export default function LoginPage() {
+
+    
 
     return (
         <>
@@ -11,13 +17,7 @@ export default function LoginPage() {
             <LoginSection>
                 <LoginContent>
                     <h2>Login Admin</h2>
-                    <LoginForm>
-                        <Input label="Email" type="email" placeholder="jonh@example.com"/>
-                        <Input label="Password" type="password" placeholder="Your Password"/>
-                        <LoginFooter>
-                            <SubmitButton type="submit">Login</SubmitButton>
-                        </LoginFooter>
-                    </LoginForm>
+                    <LoginForm />
                 </LoginContent>
             </LoginSection>
         </>

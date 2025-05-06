@@ -8,7 +8,7 @@ export function Skills () {
         <SkillsContent>
             <h2>Skills</h2>
             <SkillsGridContent>
-                {Array.from({length: 20}).map((_,index)=>{
+                {Array.from({length: 18}).map((_,index)=>{
                     return <SkillsCard key={index} />
                 })}
             </SkillsGridContent>
