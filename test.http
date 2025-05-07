@@ -1,0 +1,8 @@
+POST http://localhost:3000/api/create-user
+Content-Type: application/json
+
+{
+    "name" : "Thiago Spadari",
+    "email" : "thiago.spadari02@gmail.com",
+    "password" : "Titi9632@"
+}
