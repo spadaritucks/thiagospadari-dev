@@ -111,6 +111,7 @@ export const SeeMoreButton = styled.button`
   color: ${props => props.theme['white']};
   background-color: ${props => props.theme['blue-500']};
   font-size: 0.7rem;
+  cursor: pointer;
 
   &:hover {
     background-color: ${props => props.theme['blue-700']};

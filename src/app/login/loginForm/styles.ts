@@ -34,9 +34,7 @@ export const SubmitButton = styled.button`
   border-radius: 8px;
   color: ${props => props.theme['white']};
   background-color: ${props => props.theme['blue-500']};
-
-  
-
+  cursor: pointer;
 
   &:hover {
     background-color: ${props => props.theme['blue-700']};

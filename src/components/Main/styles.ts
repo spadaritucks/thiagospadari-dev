@@ -114,9 +114,7 @@ export const DownloadCVButton = styled.button`
   border-radius: 8px;
   color: ${props => props.theme['white']};
   background-color: ${props => props.theme['blue-500']};
-
-  
-
+  cursor: pointer;
 
   &:hover {
     background-color: ${props => props.theme['blue-700']};
@@ -131,12 +129,10 @@ export const ContactButton = styled.button`
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
-
-
   color: ${props => props.theme['white']};
   background-color: transparent;
   border: 1px solid ${props => props.theme['blue-300']};
-
+  cursor: pointer;
 
   &:hover {
     opacity: 0.5;

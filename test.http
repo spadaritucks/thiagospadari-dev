@@ -6,3 +6,8 @@ Content-Type: application/json
     "email" : "thiago.spadari02@gmail.com",
     "password" : "Titi9632@"
 }
+
+
+###
+
+DELETE http://localhost:3000/api/skills/delete-skills/4

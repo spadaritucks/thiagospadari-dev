@@ -1,5 +1,3 @@
-'use client'
-
 import { NavBar } from "@/components/navbar/component";
 import { Main } from "../components/main/component";
 import { AboutMe } from "@/components/about-me/component";
