@@ -1,8 +1,9 @@
-import {NavBar} from "@/components/navbar/component";
+import { NavBar } from "@/components/navbar/component";
 import { AboutMe } from "@/components/about-me/component";
 import { Skills } from "@/components/skills/component";
 import { Projects } from "@/components/projects/component";
 import { Main } from "@/components/main/component";
+import { Suspense } from "react";
 
 
 export default function Home() {
@@ -12,7 +13,9 @@ export default function Home() {
       <Main />
       <AboutMe />
       <Skills />
-      <Projects />
+      <Suspense>
+        <Projects />
+      </Suspense>
 
 
     </>

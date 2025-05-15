@@ -2,15 +2,17 @@
 import Link from "next/link";
 import { NavContent, NavLinksContent } from "./styles";
 import { BicepsFlexed, FlaskConical, LayoutDashboard, User } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "../button/component";
 import { api } from "@/lib/axios";
 
 export function AuthBar() {
     const pathname = usePathname()
+    const router = useRouter()
 
     async function Logout () {
         await api.delete("/sign-out")
+        await router.push('/login')
     }
 
     return (
