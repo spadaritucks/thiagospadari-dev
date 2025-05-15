@@ -1,3 +1,4 @@
+'use client'
 import { Skeleton } from "@/components/skeleton/component"
 import { TableActions } from "../styles"
 
