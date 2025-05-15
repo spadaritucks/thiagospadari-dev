@@ -12,6 +12,7 @@ import { FormError } from "@/components/formError/component";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useModal } from "@/context/ModalContext";
 import { TagInput } from "@/components/tagsInput/component";
+import { TextArea } from "@/components/textarea/component";
 
 
 
@@ -85,7 +86,7 @@ export function ProjectForm() {
             {errors.name && <FormError message={errors.name?.message}></FormError>}
             <Input label="Project Image" type="file" {...register('image')} />
             {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
-            <Input label="Description" type="text" {...register('description')} />
+            <TextArea label="Description" rows={4} cols={16} {...register('description')} />
             {errors.description && <FormError message={errors.description?.message}></FormError>}
             <Controller 
                 name="skills_id"

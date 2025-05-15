@@ -6,7 +6,7 @@ export const FormContent = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 80%;
+    width: 90%;
 `
 
 
@@ -16,5 +16,5 @@ export const NewProjectForm = styled.form`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 80%;
+    width: 100%;
 `
