@@ -2,6 +2,7 @@
 import { Skeleton } from "@/components/skeleton/component"
 import { TableActions } from "../styles"
 
+
 export function ProjectSkeleton() {
 
     return Array.from({ length: 10 }).map((_, i) => {
