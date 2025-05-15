@@ -12,6 +12,7 @@ import { z } from "zod";
 import { Button } from "@/components/button/component";
 import { toast } from "sonner";
 import { GetPaginatedProjectsResponse } from "@/RequestTypes/GetPaginatedProjectsResponse";
+import { ProjectSkeleton } from "./ProjectSkeleton/component";
 
 
 
@@ -33,7 +34,7 @@ export default function ProjectsPage() {
     .parse(searchParams.get('pageIndex') ?? "1")
 
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: async () => {
       const response = await api.get<GetPaginatedProjectsResponse>(`/projects/get-projects`, {
         params: {
@@ -108,7 +109,8 @@ export default function ProjectsPage() {
               </tr>
             </thead>
             <tbody>
-              {data?.projects && data.projects.length > 0 ? data.projects.map((project, index) => {
+              {isLoading && <ProjectSkeleton/>}
+              {data?.projects && data.projects.map((project, index) => {
                 return (
                   <tr key={index}>
                     <td>{project.id}</td>
@@ -122,7 +124,7 @@ export default function ProjectsPage() {
                     </TableActions>
                   </tr>
                 )
-              }) : <tr><td colSpan={4}>Nenhuma Project Encontrada</td></tr>}
+              })}
             </tbody>
           </ProjectsTable>
           {data?.meta && <Pagination

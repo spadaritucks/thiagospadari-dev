@@ -12,6 +12,7 @@ import { z } from "zod";
 import { Button } from "@/components/button/component";
 import { toast } from "sonner";
 import { GetPaginatedSkillsResponse } from "@/RequestTypes/GetPaginatedSkillsResponse";
+import { SkillsSkeleton } from "./SkillsSkeleton/component";
 
 
 
@@ -33,7 +34,7 @@ export default function SkillsPage() {
     .parse(searchParams.get('pageIndex') ?? "1")
 
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: async () => {
       const response = await api.get<GetPaginatedSkillsResponse>(`/skills/get-skills`, {
         params: {
@@ -109,7 +110,8 @@ export default function SkillsPage() {
               </tr>
             </thead>
             <tbody>
-              {data?.skills && data.skills.length > 0 ? data.skills.map((skill, index) => {
+              {isLoading && <SkillsSkeleton/>}
+              {data?.skills.map((skill, index) => {
                 return (
                   <tr key={index}>
                     <td>{skill.id}</td>
@@ -120,7 +122,7 @@ export default function SkillsPage() {
                     </td>
                   </tr>
                 )
-              }) : <tr><td colSpan={4}>Nenhuma Skill Encontrada</td></tr>}
+              }) }
             </tbody>
           </SkillsTable>
           {data?.meta && <Pagination

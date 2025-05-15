@@ -11,6 +11,7 @@ import { z } from "zod";
 import { Button } from "@/components/button/component";
 import { toast } from "sonner";
 import { GetPaginatedUsersResponse } from "@/RequestTypes/GetPaginatedUsers";
+import { UsersSkeleton } from "./UsersSkeleton/component";
 
 
 
@@ -33,13 +34,13 @@ export default function UsersPage() {
     .parse(searchParams.get('pageIndex') ?? "1")
 
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: async () => {
       const response = await api.get<GetPaginatedUsersResponse>(`/users/get-users`, {
         params: {
           pageIndex,
           pageSize: 10,
-          all : "false"
+          all: "false"
         }
       })
       return response.data
@@ -67,17 +68,17 @@ export default function UsersPage() {
   async function HandleDeleteUser(id: string) {
     try {
       const response = await api.delete(`/users/delete-user/${id}`)
-      
+
       toast.success(response.data.message)
 
       queryClient.invalidateQueries({
         queryKey: ["users"],
-        exact : false
+        exact: false
       })
-      
+
       hideModal()
     } catch (error: any) {
-       toast.error(error.response.data.message)
+      toast.error(error.response.data.message)
     }
   }
 
@@ -109,7 +110,8 @@ export default function UsersPage() {
               </tr>
             </thead>
             <tbody>
-              {data?.users && data.users.length > 0 ? data.users.map((user, index) => {
+              {isLoading && <UsersSkeleton />}
+              {data?.users.map((user, index) => {
                 return (
                   <tr key={index}>
                     <td>{user.id}</td>
@@ -120,7 +122,7 @@ export default function UsersPage() {
                     </td>
                   </tr>
                 )
-              }) : <tr><td colSpan={4}>Nenhuma User Encontrada</td></tr>}
+              }) }
             </tbody>
           </UsersTable>
           {data?.meta && <Pagination
