@@ -8,7 +8,11 @@ import { z } from "zod";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Pagination } from "../pagination/component";
 
-export function Projects() {
+interface ProjectsProps {
+  id?: string;
+}
+
+export function Projects({ id }: ProjectsProps) {
 
     const searchParams = useSearchParams()
     const router = useRouter()
@@ -43,7 +47,7 @@ export function Projects() {
     }
 
     return (
-        <ProjectsContent>
+        <ProjectsContent id={id}>
             <h2>Projects</h2>
             <ProjectsContainer>
                 {data?.projects && data.projects.length > 0 ? data.projects.map((project, index) =>

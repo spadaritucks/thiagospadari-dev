@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const AboutMeContent = styled.section`
    
  width: 100%;
- height: 70vh;
+ height: 100vh;
  display: flex;
  flex-direction: column;
- align-items: center;
+ align-items: flex-start;
  justify-content: center;
  gap: 20px;
 

@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
    background-color: ${props => props.theme['gray-700']};
  }
 
+ html{
+  scroll-behavior: smooth;
+ }
+
 
 
 `

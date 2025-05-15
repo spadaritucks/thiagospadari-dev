@@ -5,9 +5,13 @@ import thiagoImage from '@/assets/thiago.jpg'
 import { HomeButtonContent, HomeContent, HomeTextContent } from "./styles";
 import { Button } from "../button/component";
 
-export function Main() {
+interface MainProps {
+  id?: string;
+}
+
+export function Main({ id }: MainProps) {
   return (
-    <HomeContent>
+    <HomeContent id={id}>
       <HomeTextContent>
         <h2>
           <span className="typing typing-1">

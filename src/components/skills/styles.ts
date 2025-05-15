@@ -4,11 +4,12 @@ export const SkillsContent = styled.section`
    
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    justify-content: center;
    gap: 30px;
 
    width: 100%;
+   height: 100vh;
    max-height: 400vh;
    margin-top: 4rem;
    margin-bottom: 4rem;

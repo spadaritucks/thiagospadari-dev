@@ -8,6 +8,9 @@ export const NavContent = styled.nav`
    display: flex;
    align-items: center;
    justify-content: space-between;
+   position: fixed;
+   background-color: ${props => props.theme['gray-700']};
+   z-index: 1000;
    
 
    svg{

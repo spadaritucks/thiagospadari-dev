@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <Main />
-      <AboutMe />
-      <Skills />
+      <Main id="home" />
+      <AboutMe id="about" />
+      <Skills id="skills" />
       <Suspense>
-        <Projects />
+        <Projects id="projects" />
       </Suspense>
 
 

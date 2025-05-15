@@ -4,6 +4,7 @@ import { DevTitle, NavContent, NavLinksContent } from "./styles";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../button/component";
+import { usePathname } from "next/navigation";
 
 export function NavBar() {
     const [isOpenMobileNavBar, setIsOpenMobileNabBar] = useState<boolean>(false)
@@ -11,6 +12,7 @@ export function NavBar() {
     function ClickOpenMobileNavBar() {
         setIsOpenMobileNabBar(!isOpenMobileNavBar)
     }
+    const pathname = usePathname()
 
     return (
         <NavContent>
@@ -19,15 +21,26 @@ export function NavBar() {
                 <p>Full-Stack & Moblie Developer</p>
             </DevTitle>
             <NavLinksContent className={`${isOpenMobileNavBar ? 'open' : ''}`}>
-                <Link href="">Home</Link>
-                <Link href="">About me</Link>
-                <Link href="">Projects</Link>
+                {pathname === "/" ?
+                    <>
+                        <Link href="#home">Home</Link>
+                        <Link href="#about">About me</Link>
+                        <Link href="#projects">Projects</Link>
+                    </> : null}
+                <Button name="Login Admin" variant="primary">
+                    <Link href="/login">Login Admin</Link>
+                </Button>
+                {pathname === "/login" ?
+                    <>
+                        <Button name="Voltar" variant="destructive">
+                            <Link href="/">Voltar</Link>
+                        </Button>
+                    </> : null
+                }
             </NavLinksContent>
-            <Button name="Login Admin" variant="primary">
-                <Link href="/login">Login Admin</Link>
-            </Button>
 
-            {isOpenMobileNavBar ? <X onClick={ClickOpenMobileNavBar} /> : <Menu onClick={ClickOpenMobileNavBar} />}
+
+            {isOpenMobileNavBar && pathname === "/" ? <X onClick={ClickOpenMobileNavBar} /> : <Menu onClick={ClickOpenMobileNavBar} />}
         </NavContent>
     )
 }
