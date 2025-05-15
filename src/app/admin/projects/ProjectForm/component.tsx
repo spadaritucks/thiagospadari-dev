@@ -1,3 +1,4 @@
+'use client'
 import { Input } from "@/components/input/component";
 import { NewProjectForm } from "./styles";
 import { Controller, useForm } from "react-hook-form";

@@ -1,9 +1,8 @@
 'use client'
 import { AuthBar } from "@/components/authbar/component";
 import { DeleteOptions, ProjectsContent, ProjectsHeader, ProjectsManagerContent, ProjectsTable, TableActions } from "./styles";
-import Image from "next/image";
 import { useModal } from "@/context/ModalContext";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ProjectForm } from "./ProjectForm/component";
 import { api } from "@/lib/axios";
 import { Pagination } from "@/components/pagination/component";
