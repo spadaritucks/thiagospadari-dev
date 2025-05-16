@@ -103,7 +103,7 @@ export function ProjectForm() {
             <GridFullRowContent>
                 <Select label="Tipo de Projeto" {...register('type')}  >
                     <option value="Pessoal">Pessoal</option>
-                    <option value="Pessoal">Empresarial</option>
+                    <option value="Empresarial">Empresarial</option>
                 </Select>
             </GridFullRowContent>
 
