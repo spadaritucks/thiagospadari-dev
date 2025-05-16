@@ -27,8 +27,8 @@ export const ModalContent = styled.div`
       color : ${props => props.theme['white']};
       padding: 2rem;
       border-radius: 0.5rem;
-      max-width: 500px;
-      width: 100%;
+      max-width: 1200px;
+      width: 500px;
       position: fixed;
       top: 50%;
       left: 50%;
@@ -41,6 +41,23 @@ export const ModalContent = styled.div`
       justify-content: center;
       gap: 20px;
       animation: modalOpen 0.3s ease-in-out;
+
+      &.sm{
+        max-width: 380px;
+         
+      }
+
+       &.md{
+         max-width: 600px;
+      }
+
+      &.lg{
+         width: 90%;
+       }
+
+       @media (max-width: 500px) {
+         width: 90%;
+      }
     
      
       @keyframes modalOpen {
@@ -52,9 +69,7 @@ export const ModalContent = styled.div`
          }
       }
 
-      @media (max-width: 500px) {
-         max-width: 350px;
-      }
+      
       
 `
 

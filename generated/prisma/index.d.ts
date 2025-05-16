@@ -3244,6 +3244,8 @@ export namespace Prisma {
     name: string | null
     image: string | null
     description: string | null
+    git_repository: string | null
+    project_link: string | null
   }
 
   export type ProjectsMaxAggregateOutputType = {
@@ -3251,6 +3253,8 @@ export namespace Prisma {
     name: string | null
     image: string | null
     description: string | null
+    git_repository: string | null
+    project_link: string | null
   }
 
   export type ProjectsCountAggregateOutputType = {
@@ -3258,6 +3262,8 @@ export namespace Prisma {
     name: number
     image: number
     description: number
+    git_repository: number
+    project_link: number
     _all: number
   }
 
@@ -3267,6 +3273,8 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    git_repository?: true
+    project_link?: true
   }
 
   export type ProjectsMaxAggregateInputType = {
@@ -3274,6 +3282,8 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    git_repository?: true
+    project_link?: true
   }
 
   export type ProjectsCountAggregateInputType = {
@@ -3281,6 +3291,8 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    git_repository?: true
+    project_link?: true
     _all?: true
   }
 
@@ -3361,6 +3373,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository: string | null
+    project_link: string | null
     _count: ProjectsCountAggregateOutputType | null
     _min: ProjectsMinAggregateOutputType | null
     _max: ProjectsMaxAggregateOutputType | null
@@ -3385,6 +3399,8 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    git_repository?: boolean
+    project_link?: boolean
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projects"]>
@@ -3394,6 +3410,8 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    git_repository?: boolean
+    project_link?: boolean
   }, ExtArgs["result"]["projects"]>
 
   export type ProjectsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3401,6 +3419,8 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    git_repository?: boolean
+    project_link?: boolean
   }, ExtArgs["result"]["projects"]>
 
   export type ProjectsSelectScalar = {
@@ -3408,9 +3428,11 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    git_repository?: boolean
+    project_link?: boolean
   }
 
-  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description", ExtArgs["result"]["projects"]>
+  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "git_repository" | "project_link", ExtArgs["result"]["projects"]>
   export type ProjectsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
@@ -3428,6 +3450,8 @@ export namespace Prisma {
       name: string
       image: string
       description: string
+      git_repository: string | null
+      project_link: string | null
     }, ExtArgs["result"]["projects"]>
     composites: {}
   }
@@ -3856,6 +3880,8 @@ export namespace Prisma {
     readonly name: FieldRef<"Projects", 'String'>
     readonly image: FieldRef<"Projects", 'String'>
     readonly description: FieldRef<"Projects", 'String'>
+    readonly git_repository: FieldRef<"Projects", 'String'>
+    readonly project_link: FieldRef<"Projects", 'String'>
   }
     
 
@@ -5363,7 +5389,9 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     image: 'image',
-    description: 'description'
+    description: 'description',
+    git_repository: 'git_repository',
+    project_link: 'project_link'
   };
 
   export type ProjectsScalarFieldEnum = (typeof ProjectsScalarFieldEnum)[keyof typeof ProjectsScalarFieldEnum]
@@ -5392,6 +5420,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -5530,6 +5566,8 @@ export namespace Prisma {
     name?: StringFilter<"Projects"> | string
     image?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
+    git_repository?: StringNullableFilter<"Projects"> | string | null
+    project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
   }
 
@@ -5538,6 +5576,8 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    git_repository?: SortOrderInput | SortOrder
+    project_link?: SortOrderInput | SortOrder
     ProjectsSkills?: ProjectsSkillsOrderByRelationAggregateInput
   }
 
@@ -5549,6 +5589,8 @@ export namespace Prisma {
     name?: StringFilter<"Projects"> | string
     image?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
+    git_repository?: StringNullableFilter<"Projects"> | string | null
+    project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
   }, "id">
 
@@ -5557,6 +5599,8 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    git_repository?: SortOrderInput | SortOrder
+    project_link?: SortOrderInput | SortOrder
     _count?: ProjectsCountOrderByAggregateInput
     _max?: ProjectsMaxOrderByAggregateInput
     _min?: ProjectsMinOrderByAggregateInput
@@ -5570,6 +5614,8 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Projects"> | string
     image?: StringWithAggregatesFilter<"Projects"> | string
     description?: StringWithAggregatesFilter<"Projects"> | string
+    git_repository?: StringNullableWithAggregatesFilter<"Projects"> | string | null
+    project_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
   }
 
   export type ProjectsSkillsWhereInput = {
@@ -5720,6 +5766,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository?: string | null
+    project_link?: string | null
     ProjectsSkills?: ProjectsSkillsCreateNestedManyWithoutProjectsInput
   }
 
@@ -5728,6 +5776,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository?: string | null
+    project_link?: string | null
     ProjectsSkills?: ProjectsSkillsUncheckedCreateNestedManyWithoutProjectsInput
   }
 
@@ -5736,6 +5786,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUpdateManyWithoutProjectsNestedInput
   }
 
@@ -5744,6 +5796,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUncheckedUpdateManyWithoutProjectsNestedInput
   }
 
@@ -5752,6 +5806,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository?: string | null
+    project_link?: string | null
   }
 
   export type ProjectsUpdateManyMutationInput = {
@@ -5759,6 +5815,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsUncheckedUpdateManyInput = {
@@ -5766,6 +5824,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsSkillsCreateInput = {
@@ -5890,11 +5950,33 @@ export namespace Prisma {
     image?: SortOrder
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type ProjectsCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    git_repository?: SortOrder
+    project_link?: SortOrder
   }
 
   export type ProjectsMaxOrderByAggregateInput = {
@@ -5902,6 +5984,8 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    git_repository?: SortOrder
+    project_link?: SortOrder
   }
 
   export type ProjectsMinOrderByAggregateInput = {
@@ -5909,6 +5993,26 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    git_repository?: SortOrder
+    project_link?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type SkillsScalarRelationFilter = {
@@ -5997,6 +6101,10 @@ export namespace Prisma {
     connectOrCreate?: ProjectsSkillsCreateOrConnectWithoutProjectsInput | ProjectsSkillsCreateOrConnectWithoutProjectsInput[]
     createMany?: ProjectsSkillsCreateManyProjectsInputEnvelope
     connect?: ProjectsSkillsWhereUniqueInput | ProjectsSkillsWhereUniqueInput[]
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type ProjectsSkillsUpdateManyWithoutProjectsNestedInput = {
@@ -6095,6 +6203,48 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type ProjectsSkillsCreateWithoutSkillsInput = {
@@ -6200,6 +6350,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository?: string | null
+    project_link?: string | null
   }
 
   export type ProjectsUncheckedCreateWithoutProjectsSkillsInput = {
@@ -6207,6 +6359,8 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    git_repository?: string | null
+    project_link?: string | null
   }
 
   export type ProjectsCreateOrConnectWithoutProjectsSkillsInput = {
@@ -6253,6 +6407,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsUncheckedUpdateWithoutProjectsSkillsInput = {
@@ -6260,6 +6416,8 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    git_repository?: NullableStringFieldUpdateOperationsInput | string | null
+    project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProjectsSkillsCreateManySkillsInput = {

@@ -3,9 +3,10 @@ import { useModal } from "@/context/ModalContext"
 import { ModalBody, ModalContent, ModalHeader, ModalOverlay, ModalSection } from "./styles"
 import { X } from "lucide-react"
 
+
 export function Modal() {
 
-    const { modalTitle, modalBody, modalOpen, hideModal } = useModal()
+    const { modalTitle, modalBody, modalOpen, hideModal, size } = useModal()
 
     if(!modalOpen){
         return null
@@ -15,7 +16,7 @@ export function Modal() {
 
         <ModalSection>
             <ModalOverlay ></ModalOverlay>
-            <ModalContent>
+            <ModalContent className={size}>
                 <ModalHeader>
                     <h3>{modalTitle}</h3>
                     <X onClick={hideModal} />

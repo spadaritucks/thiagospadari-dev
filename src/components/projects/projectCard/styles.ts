@@ -113,3 +113,71 @@ export const SeeMoreButton = styled.button`
         transition: all 0.3s;
     }
 `
+
+export const ProjectDetailsContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+
+`
+
+export const ProjectDetails = styled.div`
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+
+
+    @media (max-width: 990px) {
+        flex-direction: column;
+    
+    }
+`
+
+export const ProjectDetailsImageContent = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img{
+    width: 100%;
+  }
+
+`
+
+
+
+export const ProjectDetailsText = styled.div`
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    h1 {
+        font-size: 1.8rem;
+        color: ${props => props.theme['blue-600']};  
+    }
+
+    p{
+        color: ${props => props.theme['gray-400']};
+    }
+
+`
+
+
+export const ProjectDetailsFooter = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   
+   
+`

@@ -137,7 +137,9 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   image: 'image',
-  description: 'description'
+  description: 'description',
+  git_repository: 'git_repository',
+  project_link: 'project_link'
 };
 
 exports.Prisma.ProjectsSkillsScalarFieldEnum = {
@@ -154,6 +156,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

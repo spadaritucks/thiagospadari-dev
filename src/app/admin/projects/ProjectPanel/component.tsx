@@ -55,7 +55,7 @@ export default function ProjectsPanel() {
     }
 
     function HandleConfirmDeleteProject(id: string) {
-        openModal("Tem certeza que deseja excluir?",
+        openModal("sm","Tem certeza que deseja excluir?",
             <DeleteOptions>
                 <Button variant="destructive" onClick={() => HandleDeleteProject(id)}>Sim</Button>
                 <Button variant="secondary" onClick={hideModal} >Não</Button>
@@ -88,7 +88,7 @@ export default function ProjectsPanel() {
             <ProjectsHeader>
                 <h2>Projects</h2>
                 <Button variant="primary" onClick={() => {
-                    openModal("New Project",
+                    openModal("md","New Project",
                         <ProjectForm />
                     )
                 }}>
@@ -115,7 +115,7 @@ export default function ProjectsPanel() {
                                     <td>{project.name}</td>
                                     <TableActions>
                                         <Button variant="secondary" onClick={() => {
-                                            openModal("Description", <p>{project.description}</p>)
+                                            openModal("md","Description", <p>{project.description}</p>)
                                         }}>Show Description</Button>
                                         <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Delete</Button>
                                     </TableActions>

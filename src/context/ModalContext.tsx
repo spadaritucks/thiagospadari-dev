@@ -1,13 +1,15 @@
 'use client'
 import { createContext, ReactNode, useContext, useState } from "react"
 
+type Size = "sm" | "md" | "lg"
 
 interface ModalContextType {
     modalOpen: boolean
     modalTitle: string
     modalBody: ReactNode
-    openModal: (title: string, body: ReactNode) => void
+    openModal: (size  : Size, title: string, body: ReactNode) => void
     hideModal: () => void
+    size : Size
 }
 
 interface ModalProviderProps {
@@ -20,17 +22,19 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
     const [modalTitle, setModalTitle] = useState<string>('')
     const [modalBody, setModalBody] = useState<ReactNode>(null)
     const [modalOpen, setModalOpen] = useState<boolean>(false)
+    const [size, setSize] = useState<Size>("sm")
 
-    const openModal = (title: string, body: ReactNode) => {
+    const openModal = (size : Size, title: string, body: ReactNode) => {
         setModalTitle(title)
         setModalBody(body)
+        setSize(size)
         setModalOpen(true)
     }
 
     const hideModal = () => setModalOpen(false)
 
     return (
-        <ModalContext.Provider value={{modalTitle, modalBody, modalOpen,openModal, hideModal}}>
+        <ModalContext.Provider value={{modalTitle, modalBody, modalOpen,openModal, hideModal, size}}>
             {children}
         </ModalContext.Provider>
     )
