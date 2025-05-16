@@ -64,4 +64,9 @@ export const ApplicationButton = styled.button`
    }
   }
 
+  &:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
 `

@@ -4,6 +4,7 @@ import igniteCall from '@/assets/ignite call.png'
 import typescript from '@/assets/typescript.png'
 import { useModal } from "@/context/ModalContext"
 import { Button } from "@/components/button/component"
+import Link from "next/link"
 
 type Skills = {
     id: string
@@ -16,10 +17,12 @@ interface ProjectCardProps {
     name: string
     image: string
     description: string
+    git_repository?: string;
+    project_link?: string;
     skills: Skills
 }
 
-export function ProjectCard({ id, name, image, description, skills }: ProjectCardProps) {
+export function ProjectCard({ id, name, image, description, skills, project_link, git_repository }: ProjectCardProps) {
 
     const { hideModal, openModal } = useModal()
 
@@ -48,8 +51,12 @@ export function ProjectCard({ id, name, image, description, skills }: ProjectCar
                                 </ProjectDetailsText>
                             </ProjectDetails>
                             <ProjectDetailsFooter>
-                                <Button variant="primary" >Repositorio GIT</Button>
-                                <Button variant="primary" >Link da Aplicação</Button>
+                                <Button variant="primary" disabled={!git_repository} >
+                                    {!git_repository ? "Repositorio GIT" : <Link href={git_repository}>Repositorio GIT</Link>}
+                                </Button>
+                                <Button variant="secondary" disabled={!project_link} >
+                                    {!git_repository ? "Link do Projeto" : <Link href={git_repository}>Link do Projeto</Link>}
+                                </Button>
                             </ProjectDetailsFooter>
                         </ProjectDetailsContent>
 

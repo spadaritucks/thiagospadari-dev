@@ -56,6 +56,8 @@ export function Projects({ id }: ProjectsProps) {
                         name={project.name}
                         image={project.image}
                         description={project.description}
+                        git_repository={project.git_repository}
+                        project_link={project.project_link}
                         skills={project.ProjectsSkills.map(projectSkill => projectSkill.skills)} key={index} />) : null}
             </ProjectsContainer>
             {data?.meta && <Pagination
