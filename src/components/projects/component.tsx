@@ -26,17 +26,16 @@ export function Projects({ id }: ProjectsProps) {
 
 
     const { data, isLoading } = useQuery({
-        queryKey: ['projects', pageIndex],
         queryFn: async () => {
-            const response = await api.get<GetPaginatedProjectsResponse>("/projects/get-projects", {
+            const response = await api.get<GetPaginatedProjectsResponse>(`/projects/get-projects`, {
                 params: {
                     pageIndex,
                     pageSize: 6
                 }
             })
-
             return response.data
-        }
+        },
+        queryKey: ['projects', pageIndex]
     })
 
     function HandlePaginate(newPageIndex: number) {
@@ -51,13 +50,14 @@ export function Projects({ id }: ProjectsProps) {
         <ProjectsContent id={id}>
             <h2>Projects</h2>
             <ProjectsContainer>
-                {isLoading && <ProjectCardSkeleton/>}
+                {isLoading && <ProjectCardSkeleton />}
                 {data?.projects && data.projects.length > 0 ? data.projects.map((project, index) =>
                     <ProjectCard
                         id={project.id}
                         name={project.name}
                         image={project.image}
                         description={project.description}
+                        type={project.type}
                         git_repository={project.git_repository}
                         project_link={project.project_link}
                         skills={project.ProjectsSkills.map(projectSkill => projectSkill.skills)} key={index} />) : null}

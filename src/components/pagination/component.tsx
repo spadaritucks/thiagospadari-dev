@@ -1,6 +1,6 @@
 'use client'
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
-import { PaginationActions, PaginationButton, PaginationContent, PaginationNumberPage } from "./styles";
+import { PaginationActions, PaginationButton, PaginationContent, PaginationItensCount, PaginationNumberPage } from "./styles";
 
 export interface PaginationProps {
     pageIndex: number;
@@ -14,6 +14,7 @@ export function Pagination ({onPageChange,pageIndex,perPage,totalCount} : Pagina
 
     return (
         <PaginationContent>
+            <PaginationItensCount><span>Total de {totalCount} item(s)</span></PaginationItensCount>
             <PaginationNumberPage><span>Pagina {pageIndex + 1} de {pages}</span></PaginationNumberPage>
             <PaginationActions>
                 <PaginationButton onClick={() => onPageChange(0)} disabled={pageIndex === 0}>

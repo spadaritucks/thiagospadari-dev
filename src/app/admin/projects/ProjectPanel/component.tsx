@@ -12,6 +12,7 @@ import { Button } from "@/components/button/component";
 import { toast } from "sonner";
 import { GetPaginatedProjectsResponse } from "@/RequestTypes/GetPaginatedProjectsResponse";
 import { ProjectSkeleton } from "./ProjectSkeleton/component";
+import Link from "next/link";
 
 
 
@@ -55,7 +56,7 @@ export default function ProjectsPanel() {
     }
 
     function HandleConfirmDeleteProject(id: string) {
-        openModal("sm","Tem certeza que deseja excluir?",
+        openModal("sm", "Tem certeza que deseja excluir?",
             <DeleteOptions>
                 <Button variant="destructive" onClick={() => HandleDeleteProject(id)}>Sim</Button>
                 <Button variant="secondary" onClick={hideModal} >Não</Button>
@@ -88,7 +89,7 @@ export default function ProjectsPanel() {
             <ProjectsHeader>
                 <h2>Projects</h2>
                 <Button variant="primary" onClick={() => {
-                    openModal("md","New Project",
+                    openModal("md", "New Project",
                         <ProjectForm />
                     )
                 }}>
@@ -102,6 +103,7 @@ export default function ProjectsPanel() {
                             <th>Identifier</th>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Type</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -113,10 +115,14 @@ export default function ProjectsPanel() {
                                     <td>{project.id}</td>
                                     <td><img src={project.image} width={80} height={40} alt="" /></td>
                                     <td>{project.name}</td>
+                                    <td>{project.type}</td>
                                     <TableActions>
+                                        <Button variant="primary" disabled={!project.git_repository} >
+                                            {!project.git_repository ? "Github" : <Link href={project.git_repository}>Github</Link>}
+                                        </Button>
                                         <Button variant="secondary" onClick={() => {
-                                            openModal("md","Description", <p>{project.description}</p>)
-                                        }}>Show Description</Button>
+                                            openModal("md", "Description", <p>{project.description}</p>)
+                                        }}>Description</Button>
                                         <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Delete</Button>
                                     </TableActions>
                                 </tr>

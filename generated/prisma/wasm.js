@@ -138,6 +138,7 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   name: 'name',
   image: 'image',
   description: 'description',
+  type: 'type',
   git_repository: 'git_repository',
   project_link: 'project_link'
 };

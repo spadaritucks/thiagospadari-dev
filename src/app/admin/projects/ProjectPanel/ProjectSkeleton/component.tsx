@@ -12,6 +12,7 @@ export function ProjectSkeleton() {
                 <td><Skeleton size="lg"/></td>
                 <td><Skeleton size="lg"/></td>
                 <td><Skeleton size="md"/></td>
+                <td><Skeleton size="md"/></td>
                 <TableActions >
                     <Skeleton size="lg"/>
                 </TableActions>

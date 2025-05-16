@@ -1,8 +1,11 @@
 import { AuthBar } from "@/components/authbar/component";
 import ProjectsPanel from "./ProjectPanel/component";
 import { Suspense } from "react";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Projects | Thiago Spadari Dev",
+};
 
 
 export default function ProjectsPage() {

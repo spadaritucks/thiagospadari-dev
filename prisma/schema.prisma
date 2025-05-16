@@ -35,6 +35,7 @@ model Projects {
   name           String
   image          String
   description    String  @db.Text
+  type           String?
   git_repository String? @db.VarChar(225)
   project_link   String? @db.VarChar(225)
 

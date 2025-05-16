@@ -6,9 +6,20 @@ export const PaginationContent = styled.div`
     justify-content: space-between;
     padding: 1rem;
     width: 100%;
+    gap: 30px;
 `
 
 export const PaginationNumberPage = styled.div`
+    display: flex;
+    align-items: center;
+    
+    span {
+        font-size: 1rem;
+        color : ${props => props.theme['white']}
+    }
+`
+
+export const PaginationItensCount = styled.div`
     display: flex;
     align-items: center;
     

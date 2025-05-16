@@ -20,7 +20,7 @@ export const ProjectsHeader = styled.section`
 `
 
 export const ProjectsManagerContent = styled.div`
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +60,7 @@ export const TableActions = styled.td`
     align-items: center;
     justify-content: center;
     padding: 0;
+    gap: 10px;
     
 
 `

@@ -17,12 +17,13 @@ interface ProjectCardProps {
     name: string
     image: string
     description: string
+    type : string
     git_repository?: string;
     project_link?: string;
     skills: Skills
 }
 
-export function ProjectCard({ id, name, image, description, skills, project_link, git_repository }: ProjectCardProps) {
+export function ProjectCard({ id, name, image, description, skills, project_link, type, git_repository }: ProjectCardProps) {
 
     const { hideModal, openModal } = useModal()
 
@@ -48,6 +49,7 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                                 <ProjectDetailsText>
                                     <h1>{name}</h1>
                                     <p>{description}</p>
+                                    <p><strong>Tipo do Projeto :</strong> {type}</p>
                                 </ProjectDetailsText>
                             </ProjectDetails>
                             <ProjectDetailsFooter>

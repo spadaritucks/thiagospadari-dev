@@ -13,6 +13,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useModal } from "@/context/ModalContext";
 import { TagInput } from "@/components/tagsInput/component";
 import { TextArea } from "@/components/textarea/component";
+import { Select } from "@/components/select/component";
 
 
 
@@ -25,6 +26,7 @@ const createProjectSchema = z.object({
         .refine((file) => file?.[0]?.size <= 5 * 1024 * 1024, {
             message: "A imagem deve ter no máximo 5MB"
         }),
+    type: z.string(),
     description: z.string().min(1, "Descrição é obrigatoria"),
     skills_id: z.string().array(),
     git_repository: z.optional(z.string()).nullable(),
@@ -62,6 +64,9 @@ export function ProjectForm() {
             formdata.append('name', data.name)
             formdata.append('image', data.image[0])
             formdata.append('description', data.description)
+            formdata.append('type', data.type)
+            data.git_repository ? formdata.append('git_repository', data.git_repository) : null
+            data.project_link ? formdata.append('project_link', data.project_link) : null
             formdata.append('skills_id', JSON.stringify(data.skills_id))
 
             const response = await api.post('/projects/create-project', formdata)
@@ -94,6 +99,13 @@ export function ProjectForm() {
                 <Input label="Project Image" type="file" {...register('image')} />
                 {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
             </GridContent>
+
+            <GridFullRowContent>
+                <Select label="Tipo de Projeto" {...register('type')}  >
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Pessoal">Empresarial</option>
+                </Select>
+            </GridFullRowContent>
 
             <GridFullRowContent>
                 <TextArea label="Description" rows={4} cols={16} {...register('description')} />

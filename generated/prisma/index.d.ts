@@ -3244,6 +3244,7 @@ export namespace Prisma {
     name: string | null
     image: string | null
     description: string | null
+    type: string | null
     git_repository: string | null
     project_link: string | null
   }
@@ -3253,6 +3254,7 @@ export namespace Prisma {
     name: string | null
     image: string | null
     description: string | null
+    type: string | null
     git_repository: string | null
     project_link: string | null
   }
@@ -3262,6 +3264,7 @@ export namespace Prisma {
     name: number
     image: number
     description: number
+    type: number
     git_repository: number
     project_link: number
     _all: number
@@ -3273,6 +3276,7 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    type?: true
     git_repository?: true
     project_link?: true
   }
@@ -3282,6 +3286,7 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    type?: true
     git_repository?: true
     project_link?: true
   }
@@ -3291,6 +3296,7 @@ export namespace Prisma {
     name?: true
     image?: true
     description?: true
+    type?: true
     git_repository?: true
     project_link?: true
     _all?: true
@@ -3373,6 +3379,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type: string | null
     git_repository: string | null
     project_link: string | null
     _count: ProjectsCountAggregateOutputType | null
@@ -3399,6 +3406,7 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    type?: boolean
     git_repository?: boolean
     project_link?: boolean
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
@@ -3410,6 +3418,7 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    type?: boolean
     git_repository?: boolean
     project_link?: boolean
   }, ExtArgs["result"]["projects"]>
@@ -3419,6 +3428,7 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    type?: boolean
     git_repository?: boolean
     project_link?: boolean
   }, ExtArgs["result"]["projects"]>
@@ -3428,11 +3438,12 @@ export namespace Prisma {
     name?: boolean
     image?: boolean
     description?: boolean
+    type?: boolean
     git_repository?: boolean
     project_link?: boolean
   }
 
-  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "git_repository" | "project_link", ExtArgs["result"]["projects"]>
+  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "type" | "git_repository" | "project_link", ExtArgs["result"]["projects"]>
   export type ProjectsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
@@ -3450,6 +3461,7 @@ export namespace Prisma {
       name: string
       image: string
       description: string
+      type: string | null
       git_repository: string | null
       project_link: string | null
     }, ExtArgs["result"]["projects"]>
@@ -3880,6 +3892,7 @@ export namespace Prisma {
     readonly name: FieldRef<"Projects", 'String'>
     readonly image: FieldRef<"Projects", 'String'>
     readonly description: FieldRef<"Projects", 'String'>
+    readonly type: FieldRef<"Projects", 'String'>
     readonly git_repository: FieldRef<"Projects", 'String'>
     readonly project_link: FieldRef<"Projects", 'String'>
   }
@@ -5390,6 +5403,7 @@ export namespace Prisma {
     name: 'name',
     image: 'image',
     description: 'description',
+    type: 'type',
     git_repository: 'git_repository',
     project_link: 'project_link'
   };
@@ -5566,6 +5580,7 @@ export namespace Prisma {
     name?: StringFilter<"Projects"> | string
     image?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
+    type?: StringNullableFilter<"Projects"> | string | null
     git_repository?: StringNullableFilter<"Projects"> | string | null
     project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
@@ -5576,6 +5591,7 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    type?: SortOrderInput | SortOrder
     git_repository?: SortOrderInput | SortOrder
     project_link?: SortOrderInput | SortOrder
     ProjectsSkills?: ProjectsSkillsOrderByRelationAggregateInput
@@ -5589,6 +5605,7 @@ export namespace Prisma {
     name?: StringFilter<"Projects"> | string
     image?: StringFilter<"Projects"> | string
     description?: StringFilter<"Projects"> | string
+    type?: StringNullableFilter<"Projects"> | string | null
     git_repository?: StringNullableFilter<"Projects"> | string | null
     project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
@@ -5599,6 +5616,7 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    type?: SortOrderInput | SortOrder
     git_repository?: SortOrderInput | SortOrder
     project_link?: SortOrderInput | SortOrder
     _count?: ProjectsCountOrderByAggregateInput
@@ -5614,6 +5632,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Projects"> | string
     image?: StringWithAggregatesFilter<"Projects"> | string
     description?: StringWithAggregatesFilter<"Projects"> | string
+    type?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     git_repository?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     project_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
   }
@@ -5766,6 +5785,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type?: string | null
     git_repository?: string | null
     project_link?: string | null
     ProjectsSkills?: ProjectsSkillsCreateNestedManyWithoutProjectsInput
@@ -5776,6 +5796,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type?: string | null
     git_repository?: string | null
     project_link?: string | null
     ProjectsSkills?: ProjectsSkillsUncheckedCreateNestedManyWithoutProjectsInput
@@ -5786,6 +5807,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUpdateManyWithoutProjectsNestedInput
@@ -5796,6 +5818,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUncheckedUpdateManyWithoutProjectsNestedInput
@@ -5806,6 +5829,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type?: string | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -5815,6 +5839,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5824,6 +5849,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5975,6 +6001,7 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    type?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
   }
@@ -5984,6 +6011,7 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    type?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
   }
@@ -5993,6 +6021,7 @@ export namespace Prisma {
     name?: SortOrder
     image?: SortOrder
     description?: SortOrder
+    type?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
   }
@@ -6350,6 +6379,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type?: string | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -6359,6 +6389,7 @@ export namespace Prisma {
     name: string
     image: string
     description: string
+    type?: string | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -6407,6 +6438,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6416,6 +6448,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
+    type?: NullableStringFieldUpdateOperationsInput | string | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
