@@ -7,9 +7,10 @@ import { GetPaginatedProjectsResponse } from "@/RequestTypes/GetPaginatedProject
 import { z } from "zod";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Pagination } from "../pagination/component";
+import { ProjectCardSkeleton } from "./projectCardSkeleton/component";
 
 interface ProjectsProps {
-  id?: string;
+    id?: string;
 }
 
 export function Projects({ id }: ProjectsProps) {
@@ -24,7 +25,7 @@ export function Projects({ id }: ProjectsProps) {
         .parse(searchParams.get('pageIndex') ?? "1")
 
 
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['projects', pageIndex],
         queryFn: async () => {
             const response = await api.get<GetPaginatedProjectsResponse>("/projects/get-projects", {
@@ -50,6 +51,7 @@ export function Projects({ id }: ProjectsProps) {
         <ProjectsContent id={id}>
             <h2>Projects</h2>
             <ProjectsContainer>
+                {isLoading && <ProjectCardSkeleton/>}
                 {data?.projects && data.projects.length > 0 ? data.projects.map((project, index) =>
                     <ProjectCard
                         id={project.id}
@@ -60,6 +62,7 @@ export function Projects({ id }: ProjectsProps) {
                         project_link={project.project_link}
                         skills={project.ProjectsSkills.map(projectSkill => projectSkill.skills)} key={index} />) : null}
             </ProjectsContainer>
+
             {data?.meta && <Pagination
                 onPageChange={HandlePaginate}
                 pageIndex={pageIndex}

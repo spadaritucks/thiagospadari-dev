@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const ProjectsContent = styled.section`
    
    width: 100%;
-   height: 100vh;
-   max-height: 400vh;
    padding: 3rem 4rem;
    display: flex;
    flex-direction: column;

@@ -12,6 +12,8 @@ export const SkillsCardContent = styled.div`
    border-bottom: 4px solid ${props => props.theme['blue-500']};
    padding: 15px 20px;
    color: ${props => props.theme['gray-500']};
+   width: 120px;
+   height: 120px;
 
 
    h3 {

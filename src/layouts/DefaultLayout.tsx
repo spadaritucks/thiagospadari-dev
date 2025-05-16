@@ -8,6 +8,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { Toaster } from 'sonner'
+import { DefaultSeo } from "next-seo";
 
 interface DefaultLayoutProps {
     children: ReactNode

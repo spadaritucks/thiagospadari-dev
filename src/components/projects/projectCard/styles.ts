@@ -44,6 +44,12 @@ export const ProjectCardContent = styled.div`
     img:hover {
         opacity: 1;
     }
+
+    @media (max-width:500px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `
 
 export const ProjectCardDetailsContent = styled.div`
@@ -71,8 +77,8 @@ export const ProjectCardSkillsContent = styled.div`
     gap: 5px;
 
     img {
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         opacity: 1;
     }
 `

@@ -4,15 +4,13 @@ export const SkillsContent = styled.section`
    
    display: flex;
    flex-direction: column;
-   align-items: flex-start;
+   align-items: center;
    justify-content: center;
    gap: 30px;
-
    width: 100%;
-   height: 100vh;
-   max-height: 400vh;
-   margin-top: 4rem;
-   margin-bottom: 4rem;
+   min-height: 80vh;
+   margin: 4rem 0;
+
    
  h2{
     font-size: 2rem;

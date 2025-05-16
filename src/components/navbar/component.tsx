@@ -24,7 +24,7 @@ export function NavBar() {
                 {pathname === "/" ?
                     <>
                         <Link href="#home">Home</Link>
-                        <Link href="#about">About me</Link>
+                        <Link href="#skills">Skills</Link>
                         <Link href="#projects">Projects</Link>
                     </> : null}
                 <Button name="Login Admin" variant="primary">

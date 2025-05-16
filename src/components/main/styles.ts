@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const HomeContent = styled.section`
+  
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+`
+
+export const HomeMainContent = styled.div`
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +42,7 @@ export const HomeContent = styled.section`
       height: 300px;
     }
   }
+
 
 
 `
@@ -105,6 +117,42 @@ export const HomeButtonContent = styled.div`
     text-decoration: none;
     color: ${props => props.theme['white']};
   }
+
+`
+
+export const HomeAboutMeContent = styled.div`
+   
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ gap: 20px;
+
+ h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: ${props => props.theme['white']}
+ }
+
+
+
+`
+
+export const HomeAboutMeTextContent = styled.div`
+
+   width: 700px;
+   text-align: center;
+   padding: 0 20px;
+
+  p{
+    font-size: 1.2rem;
+    color: ${props => props.theme['gray-300']}
+   }
+
+   @media (max-width: 700px) {
+     max-width: 400px;
+   }
 
 `
 

@@ -2,9 +2,7 @@
 import { NavBar } from "@/components/navbar/component";
 import { LoginContent, LoginSection } from "./styles";
 import { LoginForm } from "./loginForm/component";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-
+import { Metadata } from "next";
 
 
 export default function LoginPage() {
