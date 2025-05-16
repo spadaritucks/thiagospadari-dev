@@ -13,10 +13,11 @@ export async function POST(req: NextRequest) {
     const image = formData.get('image') as File
     const description = formData.get('description')
     const type = formData.get('type')
+    const project_date = formData.get('project_date')
     const git_repository = formData.get('git_repository')
     const project_link = formData.get('project_link')
 
-    if (!name || !description || !skills || !type) {
+    if (!name || !description || !skills || !type  || !project_date) {
         return NextResponse.json({ message: "Os dados não foram enviados" }, { status: 400 })
     }
 
@@ -53,6 +54,7 @@ export async function POST(req: NextRequest) {
             image: publicUrl,
             description: description.toString(),
             type: type.toString(),
+            project_date : new Date(project_date.toString()),
             git_repository: git_repository?.toString() ?? null,
             project_link: project_link?.toString() ?? null
         },

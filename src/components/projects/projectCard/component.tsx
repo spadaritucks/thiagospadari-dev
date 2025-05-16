@@ -17,13 +17,14 @@ interface ProjectCardProps {
     name: string
     image: string
     description: string
-    type : string
+    project_date: string
+    type: string
     git_repository?: string;
     project_link?: string;
     skills: Skills
 }
 
-export function ProjectCard({ id, name, image, description, skills, project_link, type, git_repository }: ProjectCardProps) {
+export function ProjectCard({ id, name, image, description, skills, project_link, project_date, type, git_repository }: ProjectCardProps) {
 
     const { hideModal, openModal } = useModal()
 
@@ -37,7 +38,11 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                 </ProjectCardSkillsContent>
             </ProjectCardDetailsContent>
             <ProjectCardFooter>
-                <p>23 de Janeiro de 2025</p>
+                <p>{new Date(project_date).toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                })}</p>
                 <SeeMoreButton onClick={() => {
                     openModal("lg", "Detalhes do Projeto",
                         <ProjectDetailsContent>

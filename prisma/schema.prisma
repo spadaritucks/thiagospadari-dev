@@ -36,6 +36,7 @@ model Projects {
   image          String
   description    String  @db.Text
   type           String?
+  project_date   DateTime?
   git_repository String? @db.VarChar(225)
   project_link   String? @db.VarChar(225)
 

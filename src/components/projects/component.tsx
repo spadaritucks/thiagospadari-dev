@@ -42,7 +42,7 @@ export function Projects({ id }: ProjectsProps) {
         const params = new URLSearchParams(searchParams.toString())
         params.set('pageIndex', (newPageIndex + 1).toString())
 
-        router.replace(`${pathname}?${params.toString()}`);
+        router.replace(`${pathname}?${params.toString()}#projects`);
 
     }
 
@@ -58,6 +58,7 @@ export function Projects({ id }: ProjectsProps) {
                         image={project.image}
                         description={project.description}
                         type={project.type}
+                        project_date={project.project_date}
                         git_repository={project.git_repository}
                         project_link={project.project_link}
                         skills={project.ProjectsSkills.map(projectSkill => projectSkill.skills)} key={index} />) : null}

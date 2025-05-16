@@ -14,6 +14,7 @@ import { useModal } from "@/context/ModalContext";
 import { TagInput } from "@/components/tagsInput/component";
 import { TextArea } from "@/components/textarea/component";
 import { Select } from "@/components/select/component";
+import { Grid } from "lucide-react";
 
 
 
@@ -29,6 +30,7 @@ const createProjectSchema = z.object({
     type: z.string(),
     description: z.string().min(1, "Descrição é obrigatoria"),
     skills_id: z.string().array(),
+    project_date: z.coerce.date(),
     git_repository: z.optional(z.string()).nullable(),
     project_link: z.optional(z.string()).nullable()
 })
@@ -64,6 +66,7 @@ export function ProjectForm() {
             formdata.append('name', data.name)
             formdata.append('image', data.image[0])
             formdata.append('description', data.description)
+            formdata.append('project_date', data.project_date.toISOString())
             formdata.append('type', data.type)
             data.git_repository ? formdata.append('git_repository', data.git_repository) : null
             data.project_link ? formdata.append('project_link', data.project_link) : null
@@ -100,12 +103,18 @@ export function ProjectForm() {
                 {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
             </GridContent>
 
-            <GridFullRowContent>
+
+            <GridContent>
                 <Select label="Tipo de Projeto" {...register('type')}  >
                     <option value="Pessoal">Pessoal</option>
                     <option value="Empresarial">Empresarial</option>
                 </Select>
-            </GridFullRowContent>
+            </GridContent>
+
+            <GridContent>
+                <Input label="Project Date" type="date" {...register('project_date')}/>
+                {errors.project_date && <FormError message={errors.project_date?.message}></FormError>}
+            </GridContent>
 
             <GridFullRowContent>
                 <TextArea label="Description" rows={4} cols={16} {...register('description')} />

@@ -5,6 +5,7 @@ export interface GetPaginatedProjectsResponse {
     image: string;
     description: string;
     type: string;
+    project_date : string
     git_repository? : string;
     project_link? : string;
     ProjectsSkills: {
