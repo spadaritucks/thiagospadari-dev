@@ -57,7 +57,7 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                                     {!git_repository ? "Repositorio GIT" : <Link href={git_repository}>Repositorio GIT</Link>}
                                 </Button>
                                 <Button variant="secondary" disabled={!project_link} >
-                                    {!git_repository ? "Link do Projeto" : <Link href={git_repository}>Link do Projeto</Link>}
+                                    {!project_link ? "Link do Projeto" : <Link href={project_link}>Link do Projeto</Link>}
                                 </Button>
                             </ProjectDetailsFooter>
                         </ProjectDetailsContent>
