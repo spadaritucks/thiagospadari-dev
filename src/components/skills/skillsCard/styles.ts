@@ -6,13 +6,14 @@ export const SkillsCardContent = styled.div`
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   text-align: center;
    gap: 10px;
    border-top-left-radius: 20px;
    border: 2px solid ${props => props.theme['gray-500']};
    border-bottom: 4px solid ${props => props.theme['blue-500']};
    padding: 15px 20px;
-   color: ${props => props.theme['gray-500']};
-   width: 120px;
+   color: ${props => props.theme['gray-400']};
+   width: 130px;
    height: 120px;
 
 
