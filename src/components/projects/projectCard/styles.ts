@@ -50,6 +50,7 @@ export const ProjectCardContent = styled(motion.div)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
     }
 `
 
@@ -69,6 +70,18 @@ export const ProjectCardDetailsContent = styled.div`
         font-size: 1.2rem;
         font-weight: bold;
     }
+
+    @media (max-width:500px) {
+      
+        h3{
+            font-size: 1rem;
+        }
+
+    }
+
+    
+
+    
 `
 
 export const ProjectCardSkillsContent = styled.div`
