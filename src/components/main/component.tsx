@@ -12,9 +12,9 @@ interface MainProps {
 export function Main({ id }: MainProps) {
   return (
     <HomeContent
-      initial={{ opacity: 0, x: 100 }}
+      initial={{ opacity: 0, x: -100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      transition={{ duration: 0.7, ease: 'easeInOut' }}
       id={id}>
       <HomeMainContent>
         <HomeTextContent>
@@ -30,7 +30,7 @@ export function Main({ id }: MainProps) {
           <HomeButtonContent>
 
             <Button name="Download CV" variant="primary">
-              <Link href="">Download CV</Link>
+              <Link href="/CV-THIAGO_SPADARI-2025-4.pdf">Download CV</Link>
             </Button>
             <Button name="Entre em Contato" variant="secondary">
               <Link href="https://wa.me/5511860599793">Entre em Contato</Link>
@@ -43,9 +43,9 @@ export function Main({ id }: MainProps) {
         <h2>Sobre mim</h2>
         <HomeAboutMeTextContent>
           <p>Olá, sou Thiago Spadari, desenvolvedor web com foco em front-end e back-end.
-          Atuo na criação de interfaces responsivas com foco em UI/UX, aliando a experiência do usuário à performance, 
-          além de trabalhar na integração e manutenção de APIs, garantindo a aplicação das regras de negócio e a escalabilidade 
-          dos sistemas.</p>
+            Atuo na criação de interfaces responsivas com foco em UI/UX, aliando a experiência do usuário à performance,
+            além de trabalhar na integração e manutenção de APIs, garantindo a aplicação das regras de negócio e a escalabilidade
+            dos sistemas.</p>
         </HomeAboutMeTextContent>
       </HomeAboutMeContent>
     </HomeContent>

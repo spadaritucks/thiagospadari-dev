@@ -3,6 +3,7 @@ import { Skills } from "@/components/skills/component";
 import { Projects } from "@/components/projects/component";
 import { Main } from "@/components/main/component";
 import { Suspense } from "react";
+import { Contact } from "@/components/contact/component";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Suspense>
         <Projects id="projects" />
       </Suspense>
+      <Contact id="contact"/>
 
 
     </>

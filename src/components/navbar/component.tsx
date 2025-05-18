@@ -26,6 +26,7 @@ export function NavBar() {
                         <Link href="#about-me">Sobre Mim</Link>
                         <Link href="#skills">Habilidades</Link>
                         <Link href="#projects">Projetos</Link>
+                        <Link href="#contact">Contato</Link>
                     </> : null}
                 <Button name="Login Admin" variant="primary">
                     <Link href="/login">Login Admin</Link>

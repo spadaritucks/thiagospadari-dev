@@ -6,7 +6,7 @@ export const SkillsContent = styled.section`
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
    gap: 30px;
    width: 100%;
    min-height: 80vh;
@@ -16,7 +16,8 @@ export const SkillsContent = styled.section`
  h2{
     font-size: 2rem;
     font-weight: bold;
-    color: ${props => props.theme['white']}
+    color: ${props => props.theme['white']};
+
  }
 
  
