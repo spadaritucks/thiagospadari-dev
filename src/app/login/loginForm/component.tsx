@@ -54,7 +54,7 @@ export function LoginForm() {
         <Form onSubmit={handleSubmit(HandleLoginSubmit)}>
             <Input label="Email" type="email" placeholder="jonh@example.com" {...register('email')} />
             {errors.email && <FormError message={errors.email.message}></FormError>}
-            <Input label="Password" type="password" placeholder="Your Password" {...register('password')} />
+            <Input label="Senha" type="password" placeholder="Sua Senha" {...register('password')} />
             {errors.password && <FormError message={errors.password.message}></FormError>}
             <LoginFooter>
                 <Button variant="success" disabled={isSubmitting}  type="submit">Login</Button>

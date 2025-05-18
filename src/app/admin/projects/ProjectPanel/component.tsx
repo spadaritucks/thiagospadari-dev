@@ -16,8 +16,6 @@ import Link from "next/link";
 
 
 
-
-
 export default function ProjectsPanel() {
 
     const { openModal, hideModal } = useModal()
@@ -56,7 +54,7 @@ export default function ProjectsPanel() {
     }
 
     function HandleConfirmDeleteProject(id: string) {
-        openModal("sm", "Tem certeza que deseja excluir?",
+        openModal("sm", "Tem a certeza de que deseja excluir?",
             <DeleteOptions>
                 <Button variant="destructive" onClick={() => HandleDeleteProject(id)}>Sim</Button>
                 <Button variant="secondary" onClick={hideModal} >Não</Button>
@@ -87,24 +85,24 @@ export default function ProjectsPanel() {
     return (
         <ProjectsContent>
             <ProjectsHeader>
-                <h2>Projects</h2>
+                <h2>Projetos</h2>
                 <Button variant="primary" onClick={() => {
-                    openModal("md", "New Project",
+                    openModal("md", "Novo Projeto",
                         <ProjectForm />
                     )
                 }}>
-                    New Project
+                    Novo Projeto
                 </Button>
             </ProjectsHeader>
             <ProjectsManagerContent>
                 <ProjectsTable>
                     <thead>
                         <tr>
-                            <th>Identifier</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Actions</th>
+                            <th>Identificador</th>
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -121,9 +119,9 @@ export default function ProjectsPanel() {
                                             {!project.git_repository ? "Github" : <Link href={project.git_repository}>Github</Link>}
                                         </Button>
                                         <Button variant="secondary" onClick={() => {
-                                            openModal("md", "Description", <p>{project.description}</p>)
-                                        }}>Description</Button>
-                                        <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Delete</Button>
+                                            openModal("md", "Descrição", <p>{project.description}</p>)
+                                        }}>Descrição</Button>
+                                        <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Excluir</Button>
                                     </TableActions>
                                 </tr>
                             )

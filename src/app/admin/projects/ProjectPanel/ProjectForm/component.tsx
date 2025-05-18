@@ -28,7 +28,7 @@ const createProjectSchema = z.object({
             message: "A imagem deve ter no máximo 5MB"
         }),
     type: z.string(),
-    description: z.string().min(1, "Descrição é obrigatoria"),
+    description: z.string().min(1, "Descrição é obrigatória"),
     skills_id: z.string().array(),
     project_date: z.coerce.date(),
     git_repository: z.optional(z.string()).nullable(),
@@ -94,12 +94,12 @@ export function ProjectForm() {
         <NewProjectForm onSubmit={handleSubmit(ClickSubmitProjects)}>
 
             <GridContent>
-                <Input label="Project Name" type="text" {...register('name')} />
+                <Input label="Nome do Projeto" type="text" {...register('name')} />
                 {errors.name && <FormError message={errors.name?.message}></FormError>}
             </GridContent>
 
             <GridContent>
-                <Input label="Project Image" type="file" {...register('image')} />
+                <Input label="Imagem do Projeto" type="file" {...register('image')} />
                 {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
             </GridContent>
 
@@ -112,12 +112,12 @@ export function ProjectForm() {
             </GridContent>
 
             <GridContent>
-                <Input label="Project Date" type="date" {...register('project_date')}/>
+                <Input label="Data do Projeto" type="date" {...register('project_date')}/>
                 {errors.project_date && <FormError message={errors.project_date?.message}></FormError>}
             </GridContent>
 
             <GridFullRowContent>
-                <TextArea label="Description" rows={4} cols={16} {...register('description')} />
+                <TextArea label="Descrição" rows={4} cols={16} {...register('description')} />
                 {errors.description && <FormError message={errors.description?.message}></FormError>}
             </GridFullRowContent>
 
@@ -128,7 +128,7 @@ export function ProjectForm() {
                     render={({ field }) => {
                         return (
                             <TagInput
-                                name="Skills"
+                                name="Habilidades"
                                 value={field.value}
                                 onChange={field.onChange}
                                 options={
@@ -147,12 +147,12 @@ export function ProjectForm() {
             </GridFullRowContent>
 
             <GridContent>
-                <Input label="Git Repository (Opcional)" type="text" {...register('git_repository')} />
+                <Input label="Repositório Git (Opcional)" type="text" {...register('git_repository')} />
                 {errors.git_repository && <FormError message={errors.git_repository?.message}></FormError>}
             </GridContent>
 
             <GridContent>
-                <Input label="Project Link (Opcional)" type="text" {...register('project_link')} />
+                <Input label="Link do Projeto (Opcional)" type="text" {...register('project_link')} />
                 {errors.project_link && <FormError message={errors.project_link?.message}></FormError>}
             </GridContent>
 

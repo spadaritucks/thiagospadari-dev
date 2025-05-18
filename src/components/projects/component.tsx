@@ -48,7 +48,7 @@ export function Projects({ id }: ProjectsProps) {
 
     return (
         <ProjectsContent id={id}>
-            <h2>Projects</h2>
+            <h2>Projetos</h2>
             <ProjectsContainer>
                 {isLoading && <ProjectCardSkeleton />}
                 {data?.projects && data.projects.length > 0 ? data.projects.map((project, index) =>

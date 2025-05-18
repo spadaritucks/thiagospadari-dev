@@ -24,11 +24,25 @@ export const SkillsContent = styled.section`
 
 
 export const SkillsGridContent = styled.div`
-   display: flex;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(6, 1fr);
    justify-content: center;
    gap: 20px;
    width: 90%;
+
+   @media (max-width: 990px) {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   @media (max-width: 600px) {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   
+   @media (max-width: 450px) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+  
   
     
 

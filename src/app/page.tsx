@@ -14,7 +14,7 @@ export default function Home() {
     <>
       
       <NavBar />
-      <Main id="home" />
+      <Main id="about-me" />
       <Skills id="skills" />
       <Suspense>
         <Projects id="projects" />

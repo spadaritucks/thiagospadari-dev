@@ -23,9 +23,9 @@ export function NavBar() {
             <NavLinksContent className={`${isOpenMobileNavBar ? 'open' : ''}`}>
                 {pathname === "/" ?
                     <>
-                        <Link href="#home">Home</Link>
-                        <Link href="#skills">Skills</Link>
-                        <Link href="#projects">Projects</Link>
+                        <Link href="#about-me">Sobre Mim</Link>
+                        <Link href="#skills">Habilidades</Link>
+                        <Link href="#projects">Projetos</Link>
                     </> : null}
                 <Button name="Login Admin" variant="primary">
                     <Link href="/login">Login Admin</Link>

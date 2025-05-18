@@ -53,7 +53,7 @@ export default function SkillsPanel() {
   }
 
   function HandleConfirmDeleteSkill(id: string) {
-    openModal("sm","Tem certeza que deseja excluir?",
+    openModal("sm","Tem a certeza de que deseja excluir?",
       <DeleteOptions>
         <Button variant="destructive" onClick={() => HandleDeleteSkill(id)}>Sim</Button>
         <Button variant="secondary" onClick={hideModal} >Não</Button>
@@ -85,23 +85,23 @@ export default function SkillsPanel() {
   
       <SkillsContent>
         <SkillsHeader>
-          <h2>Skills</h2>
+          <h2>Habilidades</h2>
           <Button variant="primary" onClick={() => {
-            openModal("sm","New Skill",
+            openModal("sm","Nova Habilidade",
               <SkillForm />
             )
           }}>
-            New Skill
+            Nova Habilidade
           </Button>
         </SkillsHeader>
         <SkillsManagerContent>
           <SkillsTable>
             <thead>
               <tr>
-                <th>Identifier</th>
-                <th>Icon</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>Identificador</th>
+                <th>Ícone</th>
+                <th>Nome</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>

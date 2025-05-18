@@ -5,7 +5,7 @@ import UsersPanel from "./UsersPanel/component";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Users | Thiago Spadari Dev",
+  title: "Usuarios | Thiago Spadari Dev",
 };
 
 

@@ -18,12 +18,12 @@ export function AuthBar() {
     return (
         <NavContent>
             <NavLinksContent>
-                <Link href="/admin/dashboard" aria-current={pathname === '/admin/dashboard' ? 'page' : undefined}><LayoutDashboard/> Dashboard</Link>
-                <Link href="/admin/users" aria-current={pathname === '/admin/users' ? 'page' : undefined}><User /> Users</Link>
-                <Link href="/admin/projects" aria-current={pathname === '/admin/projects' ? 'page' : undefined}><FlaskConical /> Projects</Link>
-                <Link href="/admin/skills" aria-current={pathname === '/admin/skills' ? 'page' : undefined}><BicepsFlexed /> Skills</Link>
+                <Link href="/admin/dashboard" aria-current={pathname === '/admin/dashboard' ? 'page' : undefined}><LayoutDashboard/> Painel de Controle</Link>
+                <Link href="/admin/users" aria-current={pathname === '/admin/users' ? 'page' : undefined}><User /> Usuários</Link>
+                <Link href="/admin/projects" aria-current={pathname === '/admin/projects' ? 'page' : undefined}><FlaskConical /> Projetos</Link>
+                <Link href="/admin/skills" aria-current={pathname === '/admin/skills' ? 'page' : undefined}><BicepsFlexed /> Habilidades</Link>
             </NavLinksContent>
-            <Button variant="destructive" onClick={Logout}>Logout</Button>
+            <Button variant="destructive" onClick={Logout}>Sair</Button>
         </NavContent>
     )
 }

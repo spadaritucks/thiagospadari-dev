@@ -25,7 +25,7 @@ export function Skills({ id }: SkillsProps) {
 
     return (
         <SkillsContent id={id}>
-            <h2>Skills</h2>
+            <h2>Habilidades</h2>
             <SkillsGridContent>
                 {isLoading && <SkillsCardSkeleton />}
                 {data?.skills && data.skills.length > 0 ?

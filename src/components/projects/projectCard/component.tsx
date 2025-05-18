@@ -68,7 +68,7 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                         </ProjectDetailsContent>
 
                     )
-                }}>See More</SeeMoreButton>
+                }}>Veja Mais</SeeMoreButton>
             </ProjectCardFooter>
         </ProjectCardContent>
     )

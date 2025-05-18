@@ -36,7 +36,7 @@ export function Main({ id }: MainProps) {
         <Link href="https://github.com/spadaritucks"><Image src={thiagoImage} alt="" /></Link>
       </HomeMainContent>
       <HomeAboutMeContent>
-        <h2>About Me</h2>
+        <h2>Sobre mim</h2>
         <HomeAboutMeTextContent>
           <p>Hi, I'm Thiago Spadari, a web developer focused on both front-end and back-end development,
             combining the creation of responsive UI/UX interfaces with

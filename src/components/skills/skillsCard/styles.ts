@@ -9,12 +9,12 @@ export const SkillsCardContent = styled.div`
    text-align: center;
    gap: 10px;
    border-top-left-radius: 20px;
-   border: 2px solid ${props => props.theme['gray-500']};
+   background-color: ${props => props.theme['gray-800']} ;
    border-bottom: 4px solid ${props => props.theme['blue-500']};
    padding: 15px 20px;
    color: ${props => props.theme['gray-400']};
-   width: 130px;
-   height: 120px;
+   width: 128px;
+   height: 128px;
 
 
    h3 {

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects | Thiago Spadari Dev",
+  title: "Projetos | Thiago Spadari Dev",
 };
 
 

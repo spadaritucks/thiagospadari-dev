@@ -13,8 +13,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useModal } from "@/context/ModalContext";
 
 const createUserSchema = z.object({
-    name: z.string().min(1, "O nome da user é obrigatório"),
-    email: z.string().email({message : "Insira um email valido"}),
+    name: z.string().min(1, "O nome do usuário é obrigatório"),
+    email: z.string().email({message : "Insira um email válido"}),
     password: z.string().min(4).max(30),
     confirm_password : z.string().min(4).max(30)
 })
@@ -57,13 +57,13 @@ export function UserForm() {
 
     return (
         <NewUserForm onSubmit={handleSubmit(ClickSubmitUsers)}>
-            <Input label="User Name" type="text" {...register('name')} />
+            <Input label="Nome do Usuário" type="text" {...register('name')} />
             {errors.name && <FormError message={errors.name?.message}></FormError>}
             <Input label="Email" type="email" {...register('email')} />
             {errors.email && <FormError message={errors.email?.message?.toString()}></FormError>}
-            <Input label="Password" type="password" {...register('password')} />
+            <Input label="Senha" type="password" {...register('password')} />
             {errors.password && <FormError message={errors.password?.message?.toString()}></FormError>}
-            <Input label="Confirm Password" type="password" {...register('confirm_password')} />
+            <Input label="Confirmar Senha" type="password" {...register('confirm_password')} />
             {errors.confirm_password && <FormError message={errors.confirm_password?.message?.toString()}></FormError>}
             <Button type="submit" variant="success" disabled={isSubmitting}>Enviar</Button>
         </NewUserForm>
