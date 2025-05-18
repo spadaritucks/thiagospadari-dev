@@ -57,6 +57,10 @@ export const ModalContent = styled.div`
 
        @media (max-width: 500px) {
          width: 90%;
+         max-height: 90vh;
+         overflow-y: auto;
+         padding: 1.5rem;
+         justify-content: flex-start;
       }
     
      
