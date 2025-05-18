@@ -174,6 +174,7 @@ export const ProjectDetailsText = styled.div`
 
     p{
         color: ${props => props.theme['gray-400']};
+        text-align: left;
     }
 
 `

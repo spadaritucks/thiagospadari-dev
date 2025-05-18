@@ -54,7 +54,7 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                                 <ProjectDetailsText>
                                     <h1>{name}</h1>
                                     <p>{description}</p>
-                                    <p><strong>Tipo do Projeto :</strong> {type}</p>
+                                    <span><strong>Tipo do Projeto :</strong> {type}</span>
                                 </ProjectDetailsText>
                             </ProjectDetails>
                             <ProjectDetailsFooter>
