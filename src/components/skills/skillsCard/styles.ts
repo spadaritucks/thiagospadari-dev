@@ -1,6 +1,7 @@
+import { motion } from "motion/react";
 import styled from "styled-components";
 
-export const SkillsCardContent = styled.div`
+export const SkillsCardContent = styled(motion.div)`
    
    display: flex;
    flex-direction: column;

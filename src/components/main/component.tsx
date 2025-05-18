@@ -11,7 +11,11 @@ interface MainProps {
 
 export function Main({ id }: MainProps) {
   return (
-    <HomeContent id={id}>
+    <HomeContent
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      id={id}>
       <HomeMainContent>
         <HomeTextContent>
           <h2>
@@ -38,9 +42,10 @@ export function Main({ id }: MainProps) {
       <HomeAboutMeContent>
         <h2>Sobre mim</h2>
         <HomeAboutMeTextContent>
-          <p>Hi, I'm Thiago Spadari, a web developer focused on both front-end and back-end development,
-            combining the creation of responsive UI/UX interfaces with
-            the integration and maintenance of APIs and their business logic.</p>
+          <p>Olá, sou Thiago Spadari, desenvolvedor web com foco em front-end e back-end.
+          Atuo na criação de interfaces responsivas com foco em UI/UX, aliando a experiência do usuário à performance, 
+          além de trabalhar na integração e manutenção de APIs, garantindo a aplicação das regras de negócio e a escalabilidade 
+          dos sistemas.</p>
         </HomeAboutMeTextContent>
       </HomeAboutMeContent>
     </HomeContent>

@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import styled from "styled-components";
 
 export const SkillsContent = styled.section`
@@ -23,7 +24,7 @@ export const SkillsContent = styled.section`
 `
 
 
-export const SkillsGridContent = styled.div`
+export const SkillsGridContent = styled(motion.div)`
    display: grid;
    grid-template-columns: repeat(6, 1fr);
    justify-content: center;

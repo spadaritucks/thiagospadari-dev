@@ -1,6 +1,7 @@
+import { motion } from "motion/react";
 import styled from "styled-components";
 
-export const ProjectCardContent = styled.div`
+export const ProjectCardContent = styled(motion.div)`
     max-width: 400px;
     max-height: 200px;
     border: 1px solid ${props => props.theme['gray-500']};

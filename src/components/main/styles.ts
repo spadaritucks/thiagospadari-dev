@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "motion/react"
 
-export const HomeContent = styled.section`
+export const HomeContent = styled(motion.section)`
   
   display: flex; 
   flex-direction: column;
@@ -120,7 +121,7 @@ export const HomeButtonContent = styled.div`
 
 `
 
-export const HomeAboutMeContent = styled.div`
+export const HomeAboutMeContent = styled(motion.div)`
    
  width: 100%;
  display: flex;
@@ -128,6 +129,7 @@ export const HomeAboutMeContent = styled.div`
  align-items: flex-start;
  justify-content: center;
  gap: 20px;
+ min-height: 60vh;
 
  h2{
     font-size: 2rem;
