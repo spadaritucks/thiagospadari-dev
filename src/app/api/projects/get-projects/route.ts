@@ -14,6 +14,10 @@ export async function GET(req: NextRequest) {
         prisma.projects.findMany({
             skip: pageIndex * pageSize,
             take: pageSize,
+            orderBy: {
+                // Isso vai colocar "Empresarial" primeiro se for ordenado alfabeticamente
+                type: 'asc',
+            },
             include: {
                 ProjectsSkills: {
                     include: {
