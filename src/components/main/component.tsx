@@ -30,7 +30,7 @@ export function Main({ id }: MainProps) {
           <HomeButtonContent>
 
             <Button name="Download CV" variant="primary">
-              <Link href="/CV-THIAGO_SPADARI-2025-4.pdf">Download CV</Link>
+              <Link href="/CV-THIAGO_SPADARI_19_05_2025.pdf">Download CV</Link>
             </Button>
             <Button name="Entre em Contato" variant="secondary">
               <Link href="https://wa.me/5511860599793">Entre em Contato</Link>
