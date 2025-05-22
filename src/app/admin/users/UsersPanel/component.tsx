@@ -36,7 +36,6 @@ export default function UsersPanel() {
         params: {
           pageIndex,
           pageSize: 10,
-          all: "false"
         }
       })
       return response.data
@@ -53,7 +52,7 @@ export default function UsersPanel() {
   }
 
   function HandleConfirmDeleteUser(id: string) {
-    openModal("sm","Tem a certeza de que deseja excluir?",
+    openModal("sm", "Tem a certeza de que deseja excluir?",
       <DeleteOptions>
         <Button variant="destructive" onClick={() => HandleDeleteUser(id)}>Sim</Button>
         <Button variant="secondary" onClick={hideModal} >Não</Button>
@@ -83,51 +82,51 @@ export default function UsersPanel() {
 
   return (
 
-      <UsersContent>
-        <UsersHeader>
-          <h2>Usuários</h2>
-          <Button variant="primary" onClick={() => {
-            openModal("sm","Novo Usuário",
-              <UserForm />
-            )
-          }}>
-            Novo Usuário
-          </Button>
-        </UsersHeader>
-        <UsersManagerContent>
-          <UsersTable>
-            <thead>
-              <tr>
-                <th>Identificador</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              {isLoading && <UsersSkeleton />}
-              {data?.users.map((user, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{user.id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>
-                      <Button variant="destructive" onClick={() => HandleConfirmDeleteUser(user.id)}>Excluir</Button>
-                    </td>
-                  </tr>
-                )
-              }) }
-            </tbody>
-          </UsersTable>
-          {data?.meta && <Pagination
-            onPageChange={HandlePaginate}
-            pageIndex={pageIndex}
-            totalCount={data.meta.totalCount}
-            perPage={data.meta.perPage}
-          />}
-        </UsersManagerContent>
-      </UsersContent>
+    <UsersContent>
+      <UsersHeader>
+        <h2>Usuários</h2>
+        <Button variant="primary" onClick={() => {
+          openModal("sm", "Novo Usuário",
+            <UserForm />
+          )
+        }}>
+          Novo Usuário
+        </Button>
+      </UsersHeader>
+      <UsersManagerContent>
+        <UsersTable>
+          <thead>
+            <tr>
+              <th>Identificador</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isLoading && <UsersSkeleton />}
+            {data?.users.map((user, index) => {
+              return (
+                <tr key={index}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>
+                    <Button variant="destructive" onClick={() => HandleConfirmDeleteUser(user.id)}>Excluir</Button>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </UsersTable>
+        {data?.meta && <Pagination
+          onPageChange={HandlePaginate}
+          pageIndex={pageIndex}
+          totalCount={data.meta.totalCount}
+          perPage={data.meta.perPage}
+        />}
+      </UsersManagerContent>
+    </UsersContent>
 
   )
 }

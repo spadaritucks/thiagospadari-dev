@@ -1,12 +1,14 @@
 export interface GetPaginatedUsersResponse {
-    users : {
+    // Contetudo Retornado
+    users: {
         id: string
         name: string
         email: string
     }[]
-    meta:{
-        pageIndex: number;
-        perPage: number
-        totalCount: number
+    //Metadados
+    meta: {
+        pageIndex: number; // Numero da Pagina
+        perPage: number // Numero de Items por Pagina
+        totalCount: number // Total de Items
     }
 }
