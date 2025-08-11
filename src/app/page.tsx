@@ -10,15 +10,17 @@ import { Contact } from "@/components/contact/component";
 
 export default function Home() {
 
-  
+
   return (
     <>
-      
+
       <NavBar />
       <Main id="about-me" />
       <Skills id="skills" />
-      <Projects id="projects" />
-      <Contact id="contact"/>
+      <Suspense>
+        <Projects id="projects" />
+      </Suspense>
+      <Contact id="contact" />
 
 
     </>
