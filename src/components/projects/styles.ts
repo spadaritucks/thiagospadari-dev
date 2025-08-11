@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const ProjectsContent = styled.section`
    
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+
+`
+
+export const ProjectsContainers = styled.div`
+    
    width: 100%;
    padding: 3rem 4rem;
    display: flex;
@@ -13,7 +23,8 @@ export const ProjectsContent = styled.section`
    h2{
     font-size: 2rem;
     font-weight: bold;
-    color: ${props => props.theme['white']}
+    color: ${props => props.theme['white']};
+    text-align: left;
  }
 
 `

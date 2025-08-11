@@ -28,6 +28,7 @@ export const ModalContent = styled.div`
       padding: 2rem;
       border-radius: 0.5rem;
       max-width: 1200px;
+      max-height: 500px;
       width: 500px;
       position: fixed;
       top: 50%;
@@ -38,9 +39,10 @@ export const ModalContent = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 20px;
       animation: modalOpen 0.3s ease-in-out;
+      overflow-y: scroll;
 
       &.sm{
         max-width: 380px;

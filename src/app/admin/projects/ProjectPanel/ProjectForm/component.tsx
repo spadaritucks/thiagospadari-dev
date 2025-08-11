@@ -29,6 +29,7 @@ const createProjectSchema = z.object({
         }),
     type: z.string(),
     description: z.string().min(1, "Descrição é obrigatória"),
+    priority : z.string(),
     skills_id: z.string().array(),
     project_date: z.coerce.date(),
     git_repository: z.optional(z.string()).nullable(),
@@ -68,6 +69,7 @@ export function ProjectForm() {
             formdata.append('description', data.description)
             formdata.append('project_date', data.project_date.toISOString())
             formdata.append('type', data.type)
+            formdata.append("priority", data.priority)
             data.git_repository ? formdata.append('git_repository', data.git_repository) : null
             data.project_link ? formdata.append('project_link', data.project_link) : null
             formdata.append('skills_id', JSON.stringify(data.skills_id))
@@ -108,6 +110,13 @@ export function ProjectForm() {
                 <Select label="Tipo de Projeto" {...register('type')}  >
                     <option value="Pessoal">Pessoal</option>
                     <option value="Empresarial">Empresarial</option>
+                </Select>
+            </GridContent>
+
+            <GridContent>
+                <Select label="Grau de Prioridade" {...register('priority')}  >
+                    <option value="1">Alta Prioridade</option>
+                    <option value="2">Baixa Prioridade</option>
                 </Select>
             </GridContent>
 

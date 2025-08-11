@@ -34,9 +34,12 @@ model Projects {
 
   name           String
   image          String
-  description    String  @db.Text
-  git_repository String? @db.VarChar(225)
-  project_link   String? @db.VarChar(225)
+  description    String    @db.Text
+  type           String?
+  project_date   DateTime?
+  priority       Int?
+  git_repository String?   @db.VarChar(225)
+  project_link   String?   @db.VarChar(225)
 
   ProjectsSkills ProjectsSkills[]
 }

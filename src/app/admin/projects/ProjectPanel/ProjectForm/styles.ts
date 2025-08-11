@@ -12,7 +12,7 @@ export const FormContent = styled.div`
 
 export const NewProjectForm = styled.form`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
 `
@@ -27,7 +27,7 @@ export const GridContent = styled.div`
 
 export const GridFullRowContent = styled.div`
   width: 100%;
-  grid-column: span 2;
+  grid-column: span 3;
   gap: 10px;
   display: flex;
   flex-direction: column;

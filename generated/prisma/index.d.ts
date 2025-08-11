@@ -3235,8 +3235,18 @@ export namespace Prisma {
 
   export type AggregateProjects = {
     _count: ProjectsCountAggregateOutputType | null
+    _avg: ProjectsAvgAggregateOutputType | null
+    _sum: ProjectsSumAggregateOutputType | null
     _min: ProjectsMinAggregateOutputType | null
     _max: ProjectsMaxAggregateOutputType | null
+  }
+
+  export type ProjectsAvgAggregateOutputType = {
+    priority: number | null
+  }
+
+  export type ProjectsSumAggregateOutputType = {
+    priority: number | null
   }
 
   export type ProjectsMinAggregateOutputType = {
@@ -3246,6 +3256,7 @@ export namespace Prisma {
     description: string | null
     type: string | null
     project_date: Date | null
+    priority: number | null
     git_repository: string | null
     project_link: string | null
   }
@@ -3257,6 +3268,7 @@ export namespace Prisma {
     description: string | null
     type: string | null
     project_date: Date | null
+    priority: number | null
     git_repository: string | null
     project_link: string | null
   }
@@ -3268,11 +3280,20 @@ export namespace Prisma {
     description: number
     type: number
     project_date: number
+    priority: number
     git_repository: number
     project_link: number
     _all: number
   }
 
+
+  export type ProjectsAvgAggregateInputType = {
+    priority?: true
+  }
+
+  export type ProjectsSumAggregateInputType = {
+    priority?: true
+  }
 
   export type ProjectsMinAggregateInputType = {
     id?: true
@@ -3281,6 +3302,7 @@ export namespace Prisma {
     description?: true
     type?: true
     project_date?: true
+    priority?: true
     git_repository?: true
     project_link?: true
   }
@@ -3292,6 +3314,7 @@ export namespace Prisma {
     description?: true
     type?: true
     project_date?: true
+    priority?: true
     git_repository?: true
     project_link?: true
   }
@@ -3303,6 +3326,7 @@ export namespace Prisma {
     description?: true
     type?: true
     project_date?: true
+    priority?: true
     git_repository?: true
     project_link?: true
     _all?: true
@@ -3346,6 +3370,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: ProjectsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProjectsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: ProjectsMinAggregateInputType
@@ -3376,6 +3412,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ProjectsCountAggregateInputType | true
+    _avg?: ProjectsAvgAggregateInputType
+    _sum?: ProjectsSumAggregateInputType
     _min?: ProjectsMinAggregateInputType
     _max?: ProjectsMaxAggregateInputType
   }
@@ -3387,9 +3425,12 @@ export namespace Prisma {
     description: string
     type: string | null
     project_date: Date | null
+    priority: number | null
     git_repository: string | null
     project_link: string | null
     _count: ProjectsCountAggregateOutputType | null
+    _avg: ProjectsAvgAggregateOutputType | null
+    _sum: ProjectsSumAggregateOutputType | null
     _min: ProjectsMinAggregateOutputType | null
     _max: ProjectsMaxAggregateOutputType | null
   }
@@ -3415,6 +3456,7 @@ export namespace Prisma {
     description?: boolean
     type?: boolean
     project_date?: boolean
+    priority?: boolean
     git_repository?: boolean
     project_link?: boolean
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
@@ -3428,6 +3470,7 @@ export namespace Prisma {
     description?: boolean
     type?: boolean
     project_date?: boolean
+    priority?: boolean
     git_repository?: boolean
     project_link?: boolean
   }, ExtArgs["result"]["projects"]>
@@ -3439,6 +3482,7 @@ export namespace Prisma {
     description?: boolean
     type?: boolean
     project_date?: boolean
+    priority?: boolean
     git_repository?: boolean
     project_link?: boolean
   }, ExtArgs["result"]["projects"]>
@@ -3450,11 +3494,12 @@ export namespace Prisma {
     description?: boolean
     type?: boolean
     project_date?: boolean
+    priority?: boolean
     git_repository?: boolean
     project_link?: boolean
   }
 
-  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "type" | "project_date" | "git_repository" | "project_link", ExtArgs["result"]["projects"]>
+  export type ProjectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "description" | "type" | "project_date" | "priority" | "git_repository" | "project_link", ExtArgs["result"]["projects"]>
   export type ProjectsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ProjectsSkills?: boolean | Projects$ProjectsSkillsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
@@ -3474,6 +3519,7 @@ export namespace Prisma {
       description: string
       type: string | null
       project_date: Date | null
+      priority: number | null
       git_repository: string | null
       project_link: string | null
     }, ExtArgs["result"]["projects"]>
@@ -3906,6 +3952,7 @@ export namespace Prisma {
     readonly description: FieldRef<"Projects", 'String'>
     readonly type: FieldRef<"Projects", 'String'>
     readonly project_date: FieldRef<"Projects", 'DateTime'>
+    readonly priority: FieldRef<"Projects", 'Int'>
     readonly git_repository: FieldRef<"Projects", 'String'>
     readonly project_link: FieldRef<"Projects", 'String'>
   }
@@ -5418,6 +5465,7 @@ export namespace Prisma {
     description: 'description',
     type: 'type',
     project_date: 'project_date',
+    priority: 'priority',
     git_repository: 'git_repository',
     project_link: 'project_link'
   };
@@ -5502,6 +5550,20 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float'
+   */
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -5610,6 +5672,7 @@ export namespace Prisma {
     description?: StringFilter<"Projects"> | string
     type?: StringNullableFilter<"Projects"> | string | null
     project_date?: DateTimeNullableFilter<"Projects"> | Date | string | null
+    priority?: IntNullableFilter<"Projects"> | number | null
     git_repository?: StringNullableFilter<"Projects"> | string | null
     project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
@@ -5622,6 +5685,7 @@ export namespace Prisma {
     description?: SortOrder
     type?: SortOrderInput | SortOrder
     project_date?: SortOrderInput | SortOrder
+    priority?: SortOrderInput | SortOrder
     git_repository?: SortOrderInput | SortOrder
     project_link?: SortOrderInput | SortOrder
     ProjectsSkills?: ProjectsSkillsOrderByRelationAggregateInput
@@ -5637,6 +5701,7 @@ export namespace Prisma {
     description?: StringFilter<"Projects"> | string
     type?: StringNullableFilter<"Projects"> | string | null
     project_date?: DateTimeNullableFilter<"Projects"> | Date | string | null
+    priority?: IntNullableFilter<"Projects"> | number | null
     git_repository?: StringNullableFilter<"Projects"> | string | null
     project_link?: StringNullableFilter<"Projects"> | string | null
     ProjectsSkills?: ProjectsSkillsListRelationFilter
@@ -5649,11 +5714,14 @@ export namespace Prisma {
     description?: SortOrder
     type?: SortOrderInput | SortOrder
     project_date?: SortOrderInput | SortOrder
+    priority?: SortOrderInput | SortOrder
     git_repository?: SortOrderInput | SortOrder
     project_link?: SortOrderInput | SortOrder
     _count?: ProjectsCountOrderByAggregateInput
+    _avg?: ProjectsAvgOrderByAggregateInput
     _max?: ProjectsMaxOrderByAggregateInput
     _min?: ProjectsMinOrderByAggregateInput
+    _sum?: ProjectsSumOrderByAggregateInput
   }
 
   export type ProjectsScalarWhereWithAggregatesInput = {
@@ -5666,6 +5734,7 @@ export namespace Prisma {
     description?: StringWithAggregatesFilter<"Projects"> | string
     type?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     project_date?: DateTimeNullableWithAggregatesFilter<"Projects"> | Date | string | null
+    priority?: IntNullableWithAggregatesFilter<"Projects"> | number | null
     git_repository?: StringNullableWithAggregatesFilter<"Projects"> | string | null
     project_link?: StringNullableWithAggregatesFilter<"Projects"> | string | null
   }
@@ -5820,6 +5889,7 @@ export namespace Prisma {
     description: string
     type?: string | null
     project_date?: Date | string | null
+    priority?: number | null
     git_repository?: string | null
     project_link?: string | null
     ProjectsSkills?: ProjectsSkillsCreateNestedManyWithoutProjectsInput
@@ -5832,6 +5902,7 @@ export namespace Prisma {
     description: string
     type?: string | null
     project_date?: Date | string | null
+    priority?: number | null
     git_repository?: string | null
     project_link?: string | null
     ProjectsSkills?: ProjectsSkillsUncheckedCreateNestedManyWithoutProjectsInput
@@ -5844,6 +5915,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUpdateManyWithoutProjectsNestedInput
@@ -5856,6 +5928,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
     ProjectsSkills?: ProjectsSkillsUncheckedUpdateManyWithoutProjectsNestedInput
@@ -5868,6 +5941,7 @@ export namespace Prisma {
     description: string
     type?: string | null
     project_date?: Date | string | null
+    priority?: number | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -5879,6 +5953,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -5890,6 +5965,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6042,6 +6118,17 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -6054,8 +6141,13 @@ export namespace Prisma {
     description?: SortOrder
     type?: SortOrder
     project_date?: SortOrder
+    priority?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
+  }
+
+  export type ProjectsAvgOrderByAggregateInput = {
+    priority?: SortOrder
   }
 
   export type ProjectsMaxOrderByAggregateInput = {
@@ -6065,6 +6157,7 @@ export namespace Prisma {
     description?: SortOrder
     type?: SortOrder
     project_date?: SortOrder
+    priority?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
   }
@@ -6076,8 +6169,13 @@ export namespace Prisma {
     description?: SortOrder
     type?: SortOrder
     project_date?: SortOrder
+    priority?: SortOrder
     git_repository?: SortOrder
     project_link?: SortOrder
+  }
+
+  export type ProjectsSumOrderByAggregateInput = {
+    priority?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6110,6 +6208,22 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type SkillsScalarRelationFilter = {
@@ -6206,6 +6320,14 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type ProjectsSkillsUpdateManyWithoutProjectsNestedInput = {
@@ -6331,6 +6453,17 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -6348,17 +6481,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
@@ -6371,6 +6493,33 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type ProjectsSkillsCreateWithoutSkillsInput = {
@@ -6478,6 +6627,7 @@ export namespace Prisma {
     description: string
     type?: string | null
     project_date?: Date | string | null
+    priority?: number | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -6489,6 +6639,7 @@ export namespace Prisma {
     description: string
     type?: string | null
     project_date?: Date | string | null
+    priority?: number | null
     git_repository?: string | null
     project_link?: string | null
   }
@@ -6539,6 +6690,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6550,6 +6702,7 @@ export namespace Prisma {
     description?: StringFieldUpdateOperationsInput | string
     type?: NullableStringFieldUpdateOperationsInput | string | null
     project_date?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    priority?: NullableIntFieldUpdateOperationsInput | number | null
     git_repository?: NullableStringFieldUpdateOperationsInput | string | null
     project_link?: NullableStringFieldUpdateOperationsInput | string | null
   }

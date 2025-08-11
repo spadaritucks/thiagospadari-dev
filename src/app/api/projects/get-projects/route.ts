@@ -6,14 +6,29 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
 
     const searchParams = req.nextUrl.searchParams
-    const pageIndex = Number(searchParams.get('pageIndex'))
+    const pageHighlightsParam = searchParams.get('pageIndexHighlights');
+    const pagePersonalParam = searchParams.get('pageIndexPersonal');
+    
+    const pageHighlights = pageHighlightsParam !== null ? Number(pageHighlightsParam) : undefined;
+    const pagePersonal = pagePersonalParam !== null ? Number(pagePersonalParam) : undefined;
+    
+    const pageIndex = pageHighlights !== undefined ? pageHighlights : (pagePersonal !== undefined ? pagePersonal : 0);
+    
     const pageSize = Number(searchParams.get('pageSize'))
+    
+
+    const priorityParam = searchParams.get('priority');
+    const priority = priorityParam !== null ? Number(priorityParam) : undefined;
+
 
 
     const [data, totalCount] = await Promise.all([
         prisma.projects.findMany({
             skip: pageIndex * pageSize,
             take: pageSize,
+            where : {
+                priority 
+            },
             orderBy: {
                 // Isso vai colocar "Empresarial" primeiro se for ordenado alfabeticamente
                 type: 'asc',
@@ -27,7 +42,11 @@ export async function GET(req: NextRequest) {
             }
         },
         ),
-        prisma.projects.count()
+        prisma.projects.count({
+            where : {
+                priority
+            } 
+        })
     ])
    
     const sortedProjects = data.sort((a, b) => {

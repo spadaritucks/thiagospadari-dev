@@ -17,9 +17,7 @@ export default function Home() {
       <NavBar />
       <Main id="about-me" />
       <Skills id="skills" />
-      <Suspense>
-        <Projects id="projects" />
-      </Suspense>
+      <Projects id="projects" />
       <Contact id="contact"/>
 
 

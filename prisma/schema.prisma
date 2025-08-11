@@ -37,6 +37,7 @@ model Projects {
   description    String  @db.Text
   type           String?
   project_date   DateTime?
+  priority       Int?
   git_repository String? @db.VarChar(225)
   project_link   String? @db.VarChar(225)
 
