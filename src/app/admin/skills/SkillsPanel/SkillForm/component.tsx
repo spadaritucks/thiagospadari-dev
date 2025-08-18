@@ -13,13 +13,13 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useModal } from "@/context/ModalContext";
 
 const createSkillSchema = z.object({
-    name: z.string().min(1, "O nome da habilidade é obrigatório"),
+    name: z.string().min(1, "Skill name is required"),
     image: z.any()
         .refine((file) => file?.[0]?.type?.startsWith("image/"), {
-            message: "O arquivo deve ser uma imagem"
+            message: "File must be an image"
         })
         .refine((file) => file?.[0]?.size <= 5 * 1024 * 1024, {
-            message: "A imagem deve ter no máximo 5MB"
+            message: "Image must be at most 5MB"
         })
 })
 
@@ -57,11 +57,11 @@ export function SkillForm() {
 
     return (
         <NewSkillForm onSubmit={handleSubmit(ClickSubmitSkills)}>
-            <Input label="Nome da Habilidade" type="text" {...register('name')} />
+            <Input label="Skill Name" type="text" {...register('name')} />
             {errors.name && <FormError message={errors.name?.message}></FormError>}
-            <Input label="Imagem da Habilidade" type="file" {...register('image')} />
+            <Input label="Skill Image" type="file" {...register('image')} />
             {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
-            <Button type="submit" variant="success" disabled={isSubmitting}>Enviar</Button>
+            <Button type="submit" variant="success" disabled={isSubmitting}>Submit</Button>
         </NewSkillForm>
     )
 }

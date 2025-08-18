@@ -16,11 +16,11 @@ import { useRouter } from "next/navigation";
 const LoginFormSchema = z.object({
     email: z
         .string()
-        .email({ message: "Insira um email valido" }),
+        .email({ message: "Please enter a valid email" }),
     password: z
         .string()
-        .min(8, { message: "A senha deve conter no minimo 8 caracteres" })
-        .max(100, { message: "A senha deve conter no maximo 100 caracteres" })
+        .min(8, { message: "Password must contain at least 8 characters" })
+        .max(100, { message: "Password must contain at most 100 characters" })
 })
 
 type LoginFormData = z.infer<typeof LoginFormSchema>
@@ -54,7 +54,7 @@ export function LoginForm() {
         <Form onSubmit={handleSubmit(HandleLoginSubmit)}>
             <Input label="Email" type="email" placeholder="jonh@example.com" {...register('email')} />
             {errors.email && <FormError message={errors.email.message}></FormError>}
-            <Input label="Senha" type="password" placeholder="Sua Senha" {...register('password')} />
+            <Input label="Password" type="password" placeholder="Your Password" {...register('password')} />
             {errors.password && <FormError message={errors.password.message}></FormError>}
             <LoginFooter>
                 <Button variant="success" disabled={isSubmitting}  type="submit">Login</Button>

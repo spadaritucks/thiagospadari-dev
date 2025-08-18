@@ -15,7 +15,7 @@ export function Contact({ id }: ContactProps) {
             transition={{ duration: 0.7, ease: 'easeInOut' }}
 
         >
-            <h2>Contato</h2>
+            <h2>Contact</h2>
             <ContactContainer>
                 <ContactItem href="https://www.linkedin.com/in/thiago-spadari">
                     <ContactSvg><Linkedin /></ContactSvg>

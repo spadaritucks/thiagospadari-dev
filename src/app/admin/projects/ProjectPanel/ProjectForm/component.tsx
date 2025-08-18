@@ -19,16 +19,16 @@ import { Grid } from "lucide-react";
 
 
 const createProjectSchema = z.object({
-    name: z.string().min(1, "O nome do projeto é obrigatório"),
+    name: z.string().min(1, "Project name is required"),
     image: z.any()
         .refine((file) => file?.[0]?.type?.startsWith("image/"), {
-            message: "O arquivo deve ser uma imagem"
+            message: "File must be an image"
         })
         .refine((file) => file?.[0]?.size <= 5 * 1024 * 1024, {
-            message: "A imagem deve ter no máximo 5MB"
+            message: "Image must be at most 5MB"
         }),
     type: z.string(),
-    description: z.string().min(1, "Descrição é obrigatória"),
+    description: z.string().min(1, "Description is required"),
     priority : z.string(),
     skills_id: z.string().array(),
     project_date: z.coerce.date(),
@@ -96,37 +96,37 @@ export function ProjectForm() {
         <NewProjectForm onSubmit={handleSubmit(ClickSubmitProjects)}>
 
             <GridContent>
-                <Input label="Nome do Projeto" type="text" {...register('name')} />
+                <Input label="Project Name" type="text" {...register('name')} />
                 {errors.name && <FormError message={errors.name?.message}></FormError>}
             </GridContent>
 
             <GridContent>
-                <Input label="Imagem do Projeto" type="file" {...register('image')} />
+                <Input label="Project Image" type="file" {...register('image')} />
                 {errors.image && <FormError message={errors.image?.message?.toString()}></FormError>}
             </GridContent>
 
 
             <GridContent>
-                <Select label="Tipo de Projeto" {...register('type')}  >
-                    <option value="Pessoal">Pessoal</option>
-                    <option value="Empresarial">Empresarial</option>
+                <Select label="Project Type" {...register('type')}  >
+                    <option value="Personal">Personal</option>
+                    <option value="Business">Business</option>
                 </Select>
             </GridContent>
 
             <GridContent>
-                <Select label="Grau de Prioridade" {...register('priority')}  >
-                    <option value="1">Alta Prioridade</option>
-                    <option value="2">Baixa Prioridade</option>
+                <Select label="Priority Level" {...register('priority')}  >
+                    <option value="1">High Priority</option>
+                    <option value="2">Low Priority</option>
                 </Select>
             </GridContent>
 
             <GridContent>
-                <Input label="Data do Projeto" type="date" {...register('project_date')}/>
+                <Input label="Project Date" type="date" {...register('project_date')}/>
                 {errors.project_date && <FormError message={errors.project_date?.message}></FormError>}
             </GridContent>
 
             <GridFullRowContent>
-                <TextArea label="Descrição" rows={4} cols={16} {...register('description')} />
+                <TextArea label="Description" rows={4} cols={16} {...register('description')} />
                 {errors.description && <FormError message={errors.description?.message}></FormError>}
             </GridFullRowContent>
 
@@ -137,7 +137,7 @@ export function ProjectForm() {
                     render={({ field }) => {
                         return (
                             <TagInput
-                                name="Habilidades"
+                                name="Skills"
                                 value={field.value}
                                 onChange={field.onChange}
                                 options={
@@ -156,17 +156,17 @@ export function ProjectForm() {
             </GridFullRowContent>
 
             <GridContent>
-                <Input label="Repositório Git (Opcional)" type="text" {...register('git_repository')} />
+                <Input label="Git Repository (Optional)" type="text" {...register('git_repository')} />
                 {errors.git_repository && <FormError message={errors.git_repository?.message}></FormError>}
             </GridContent>
 
             <GridContent>
-                <Input label="Link do Projeto (Opcional)" type="text" {...register('project_link')} />
+                <Input label="Project Link (Optional)" type="text" {...register('project_link')} />
                 {errors.project_link && <FormError message={errors.project_link?.message}></FormError>}
             </GridContent>
 
             <GridFullRowContent>
-                <Button type="submit" variant="success" disabled={isSubmitting}>Enviar</Button>
+                <Button type="submit" variant="success" disabled={isSubmitting}>Submit</Button>
             </GridFullRowContent>
         </NewProjectForm>
     )

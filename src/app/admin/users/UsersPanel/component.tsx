@@ -52,10 +52,10 @@ export default function UsersPanel() {
   }
 
   function HandleConfirmDeleteUser(id: string) {
-    openModal("sm", "Tem a certeza de que deseja excluir?",
+    openModal("sm", "Are you sure you want to delete?",
       <DeleteOptions>
-        <Button variant="destructive" onClick={() => HandleDeleteUser(id)}>Sim</Button>
-        <Button variant="secondary" onClick={hideModal} >Não</Button>
+        <Button variant="destructive" onClick={() => HandleDeleteUser(id)}>Yes</Button>
+        <Button variant="secondary" onClick={hideModal} >No</Button>
       </DeleteOptions>
     )
   }
@@ -84,23 +84,23 @@ export default function UsersPanel() {
 
     <UsersContent>
       <UsersHeader>
-        <h2>Usuários</h2>
+        <h2>Users</h2>
         <Button variant="primary" onClick={() => {
-          openModal("sm", "Novo Usuário",
+          openModal("sm", "New User",
             <UserForm />
           )
         }}>
-          Novo Usuário
+          New User
         </Button>
       </UsersHeader>
       <UsersManagerContent>
         <UsersTable>
           <thead>
             <tr>
-              <th>Identificador</th>
-              <th>Nome</th>
+              <th>ID</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Ações</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -112,7 +112,7 @@ export default function UsersPanel() {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                    <Button variant="destructive" onClick={() => HandleConfirmDeleteUser(user.id)}>Excluir</Button>
+                    <Button variant="destructive" onClick={() => HandleConfirmDeleteUser(user.id)}>Delete</Button>
                   </td>
                 </tr>
               )

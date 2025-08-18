@@ -20,7 +20,7 @@ export function Main({ id }: MainProps) {
         <HomeTextContent>
           <h2>
             <span className="typing typing-1">
-              Olá, eu sou o&nbsp; <span style={{ color: "#3b82f6" }}>Thiago Spadari</span>
+              Hello, I'm&nbsp; <span style={{ color: "#3b82f6" }}>Thiago Spadari</span>
             </span>
           </h2>
           <p>
@@ -32,20 +32,19 @@ export function Main({ id }: MainProps) {
             <Button name="Download CV" variant="primary">
               <Link href="/CV-THIAGO_SPADARI_19_05_2025.pdf">Download CV</Link>
             </Button>
-            <Button name="Entre em Contato" variant="secondary">
-              <Link href="https://wa.me/5511860599793">Entre em Contato</Link>
+            <Button name="Get in Touch" variant="secondary">
+              <Link href="https://wa.me/5511860599793">Get in Touch</Link>
             </Button>
           </HomeButtonContent>
         </HomeTextContent>
         <Link href="https://github.com/spadaritucks"><Image src={thiagoImage} alt="" /></Link>
       </HomeMainContent>
       <HomeAboutMeContent>
-        <h2>Sobre mim</h2>
+        <h2>About Me</h2>
         <HomeAboutMeTextContent>
-          <p>Olá, sou Thiago Spadari, desenvolvedor web com foco em front-end e back-end.
-            Atuo na criação de interfaces responsivas com foco em UI/UX, aliando a experiência do usuário à performance,
-            além de trabalhar na integração e manutenção de APIs, garantindo a aplicação das regras de negócio e a escalabilidade
-            dos sistemas.</p>
+          <p>Hello, I'm Thiago Spadari, a web developer focused on front-end and back-end development.
+            I work on creating responsive interfaces with a focus on UI/UX, combining user experience with performance,
+            as well as working on API integration and maintenance, ensuring the application of business rules and system scalability.</p>
         </HomeAboutMeTextContent>
       </HomeAboutMeContent>
     </HomeContent>

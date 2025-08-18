@@ -54,10 +54,10 @@ export default function ProjectsPanel() {
     }
 
     function HandleConfirmDeleteProject(id: string) {
-        openModal("sm", "Tem a certeza de que deseja excluir?",
+        openModal("sm", "Are you sure you want to delete?",
             <DeleteOptions>
-                <Button variant="destructive" onClick={() => HandleDeleteProject(id)}>Sim</Button>
-                <Button variant="secondary" onClick={hideModal} >Não</Button>
+                <Button variant="destructive" onClick={() => HandleDeleteProject(id)}>Yes</Button>
+                <Button variant="secondary" onClick={hideModal} >No</Button>
             </DeleteOptions>
         )
     }
@@ -85,24 +85,24 @@ export default function ProjectsPanel() {
     return (
         <ProjectsContent>
             <ProjectsHeader>
-                <h2>Projetos</h2>
+                <h2>Projects</h2>
                 <Button variant="primary" onClick={() => {
-                    openModal("md", "Novo Projeto",
+                    openModal("md", "New Project",
                         <ProjectForm />
                     )
                 }}>
-                    Novo Projeto
+                    New Project
                 </Button>
             </ProjectsHeader>
             <ProjectsManagerContent>
                 <ProjectsTable>
                     <thead>
                         <tr>
-                            <th>Identificador</th>
-                            <th>Imagem</th>
-                            <th>Nome</th>
-                            <th>Tipo</th>
-                            <th>Ações</th>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -119,9 +119,9 @@ export default function ProjectsPanel() {
                                             {!project.git_repository ? "Github" : <Link href={project.git_repository}>Github</Link>}
                                         </Button>
                                         <Button variant="secondary" onClick={() => {
-                                            openModal("md", "Descrição", <p>{project.description}</p>)
-                                        }}>Descrição</Button>
-                                        <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Excluir</Button>
+                                            openModal("md", "Description", <p>{project.description}</p>)
+                                        }}>Description</Button>
+                                        <Button variant="destructive" onClick={() => HandleConfirmDeleteProject(project.id)}>Delete</Button>
                                     </TableActions>
                                 </tr>
                             )

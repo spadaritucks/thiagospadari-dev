@@ -43,13 +43,13 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                 </ProjectCardSkillsContent>
             </ProjectCardDetailsContent>
             <ProjectCardFooter>
-                <p>{new Date(project_date).toLocaleDateString('pt-BR', {
+                <p>{new Date(project_date).toLocaleDateString('en-US', {
                     day: '2-digit',
                     month: 'long',
                     year: 'numeric'
                 })}</p>
                 <SeeMoreButton onClick={() => {
-                    openModal("lg", "Detalhes do Projeto",
+                    openModal("lg", "Project Details",
                         <ProjectDetailsContent>
                             <ProjectDetails>
                                 <ProjectDetailsImageContent>
@@ -59,21 +59,21 @@ export function ProjectCard({ id, name, image, description, skills, project_link
                                 <ProjectDetailsText>
                                     <h1>{name}</h1>
                                     <p>{description}</p>
-                                    <span><strong>Tipo do Projeto :</strong> {type}</span>
+                                    <span><strong>Project Type:</strong> {type}</span>
                                 </ProjectDetailsText>
                             </ProjectDetails>
                             <ProjectDetailsFooter>
                                 <Button variant="primary" disabled={!git_repository} >
-                                    {!git_repository ? "Repositorio GIT" : <Link href={git_repository}>Repositorio GIT</Link>}
+                                    {!git_repository ? "GIT Repository" : <Link href={git_repository}>GIT Repository</Link>}
                                 </Button>
                                 <Button variant="secondary" disabled={!project_link} >
-                                    {!project_link ? "Link do Projeto" : <Link href={project_link}>Link do Projeto</Link>}
+                                    {!project_link ? "Project Link" : <Link href={project_link}>Project Link</Link>}
                                 </Button>
                             </ProjectDetailsFooter>
                         </ProjectDetailsContent>
 
                     )
-                }}>Veja Mais</SeeMoreButton>
+                }}>See More</SeeMoreButton>
             </ProjectCardFooter>
         </ProjectCardContent>
     )

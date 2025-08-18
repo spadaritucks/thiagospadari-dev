@@ -73,7 +73,7 @@ export function Projects({ id }: ProjectsProps) {
         <ProjectsContent id={id}>
 
             <ProjectsContainers>
-                <h2>Destaques | Projetos mais Relevantes</h2>
+                <h2>Highlights | Most Relevant Projects</h2>
                 <ProjectsContainer>
                     {highlightsIsLoading && <ProjectCardSkeleton />}
                     {highlights?.projects && highlights.projects.length > 0 ? highlights.projects.map((project, index) =>
@@ -96,7 +96,7 @@ export function Projects({ id }: ProjectsProps) {
                     perPage={highlights.meta.perPage}
                 />}
 
-                <h2>Projetos Pessoais | Experimentais</h2>
+                <h2>Personal | Experimental Projects</h2>
                 <ProjectsContainer>
                     {personalIsLoading && <ProjectCardSkeleton />}
                     {personal?.projects && personal.projects.length > 0 ? personal.projects.map((project, index) =>
