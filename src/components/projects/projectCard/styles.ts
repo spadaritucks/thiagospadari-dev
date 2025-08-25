@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import styled from "styled-components";
 
-export const ProjectCardContent = styled(motion.div)`
+export const ProjectCardContent = styled.div`
     max-width: 400px;
     max-height: 200px;
     border: 1px solid ${props => props.theme['gray-500']};
@@ -14,6 +14,8 @@ export const ProjectCardContent = styled(motion.div)`
     text-align: center;
     cursor: pointer;
     z-index: 1;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
 
     img {
         width: 100%;
@@ -24,7 +26,6 @@ export const ProjectCardContent = styled(motion.div)`
 
     &:hover {
         transform: scale(1.1);
-        transition: all 0.4s;
         z-index: 2;
 
         > * {

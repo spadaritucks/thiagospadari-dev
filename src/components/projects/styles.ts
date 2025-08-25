@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import styled from "styled-components";
 
 export const ProjectsContent = styled.section`
@@ -29,7 +30,7 @@ export const ProjectsContainers = styled.div`
 
 `
 
-export const ProjectsContainer = styled.div`
+export const ProjectsContainer = styled(motion.div)`
    
    display: grid;
    grid-template-columns: repeat(3, 1fr);

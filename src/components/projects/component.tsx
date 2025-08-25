@@ -74,7 +74,11 @@ export function Projects({ id }: ProjectsProps) {
 
             <ProjectsContainers>
                 <h2>Highlights | Most Relevant Projects</h2>
-                <ProjectsContainer>
+                <ProjectsContainer
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, ease: 'easeInOut' }}
+                >
                     {highlightsIsLoading && <ProjectCardSkeleton />}
                     {highlights?.projects && highlights.projects.length > 0 ? highlights.projects.map((project, index) =>
                         <ProjectCard
@@ -97,7 +101,11 @@ export function Projects({ id }: ProjectsProps) {
                 />}
 
                 <h2>Personal | Experimental Projects</h2>
-                <ProjectsContainer>
+                <ProjectsContainer
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, ease: 'easeInOut' }}
+                >
                     {personalIsLoading && <ProjectCardSkeleton />}
                     {personal?.projects && personal.projects.length > 0 ? personal.projects.map((project, index) =>
                         <ProjectCard

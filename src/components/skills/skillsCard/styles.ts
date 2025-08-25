@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import styled from "styled-components";
 
-export const SkillsCardContent = styled(motion.div)`
+export const SkillsCardContent = styled.div`
    
    display: flex;
    flex-direction: column;
@@ -16,7 +16,8 @@ export const SkillsCardContent = styled(motion.div)`
    color: ${props => props.theme['gray-400']};
    width: 128px;
    height: 128px;
-
+   transform: scale(1);
+   transition: all 0.4s ease-in-out;
 
    h3 {
      font-size: 1rem;
@@ -28,8 +29,7 @@ export const SkillsCardContent = styled(motion.div)`
    }
 
    &:hover{
-     transform: scale(1.1);
-     transition: all 0.4s;
-     cursor: pointer
+     transform: scale(1.15);
+     cursor: pointer;
    }
 `

@@ -29,12 +29,7 @@ export function ProjectCard({ id, name, image, description, skills, project_link
     const { hideModal, openModal } = useModal()
 
     return (
-        <ProjectCardContent
-            key={id}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: 'easeInOut' }}
-        >
+        <ProjectCardContent key={id}>
             <img src={image} alt="" />
             <ProjectCardDetailsContent>
                 <h3>{name}</h3>

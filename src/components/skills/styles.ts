@@ -24,7 +24,6 @@ export const SkillsContent = styled.section`
 
 `
 
-
 export const SkillsGridContent = styled(motion.div)`
    display: grid;
    grid-template-columns: repeat(6, 1fr);

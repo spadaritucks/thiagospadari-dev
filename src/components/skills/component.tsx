@@ -26,7 +26,11 @@ export function Skills({ id }: SkillsProps) {
     return (
         <SkillsContent id={id}>
             <h2>Skills</h2>
-            <SkillsGridContent>
+            <SkillsGridContent
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: 'easeInOut' }}
+            >
                 {isLoading && <SkillsCardSkeleton />}
                 {data?.skills && data.skills.length > 0 ?
                     data.skills.map((skill, index) => <SkillsCard name={skill.name} image={skill.image} key={index} />) : null}
