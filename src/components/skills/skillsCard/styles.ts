@@ -10,8 +10,8 @@ export const SkillsCardContent = styled.div`
    text-align: center;
    gap: 10px;
    border-top-left-radius: 20px;
-   background-color: ${props => props.theme['gray-800']} ;
-   border-bottom: 4px solid ${props => props.theme['blue-500']};
+   background: radial-gradient(${props => props.theme['blue-900']}, ${props => props.theme['black']});
+   border-bottom: 4px solid ${props => props.theme['blue-900']};
    padding: 15px 20px;
    color: ${props => props.theme['gray-400']};
    width: 128px;

@@ -8,7 +8,17 @@ export const HomeContent = styled(motion.section)`
   align-items: center;
   justify-content: center;
   width: 100%;
+
   
+  .back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 `
 
 export const HomeMainContent = styled.div`
@@ -16,9 +26,12 @@ export const HomeMainContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   gap: 20px;
   width: 100%;
   height: 100vh;
+
+
 
 
   img {

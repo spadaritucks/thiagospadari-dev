@@ -40,6 +40,7 @@ export const defaultTheme = {
     'blue-700': '#1d4ed8',
     'blue-800': '#1e40af',
     'blue-900': '#1e3a8a',
+    "blue-950": "#162456",
   
     // Cyan
     'cyan-100': '#cffafe',
@@ -53,6 +54,7 @@ export const defaultTheme = {
     'cyan-900': '#164e63',
 
     "black" : "#000"
+    
 
   } as const
   

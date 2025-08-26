@@ -4,6 +4,8 @@ import Image from "next/image";
 import thiagoImage from '@/assets/thiago.jpg'
 import { HomeAboutMeContent, HomeAboutMeTextContent, HomeButtonContent, HomeContent, HomeMainContent, HomeTextContent } from "./styles";
 import { Button } from "../button/component";
+import { NavBar } from "../navbar/component";
+
 
 interface MainProps {
   id?: string;
@@ -16,7 +18,10 @@ export function Main({ id }: MainProps) {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, ease: 'easeInOut' }}
       id={id}>
+      <video autoPlay loop muted playsInline className="back-video" src="./background-tsd.mp4" />
+  
       <HomeMainContent>
+
         <HomeTextContent>
           <h2>
             <span className="typing typing-1">

@@ -21,6 +21,7 @@ export function NavBar() {
          <NavContent>
             <DevTitle>
                 <Image src={logo} width={70} height={70} alt=""></Image>
+                <h1>Thiago Spadari DEV <br/> <span style={{fontSize : 12, fontWeight : 400}}>Full Stack Developer</span></h1>
             </DevTitle>
             <NavLinksContent className={`${isOpenMobileNavBar ? 'open' : ''}`}>
                 {pathname === "/" ?

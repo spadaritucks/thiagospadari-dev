@@ -7,23 +7,27 @@ export const NavRoot = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90px;
+  height: 100px;
   padding: 0 30px;
-
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  
 `
 
 export const NavContent = styled.nav`
    
-   width: 95%;
-   height: 70px;
+   width: 98%;
+   height: 90px;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   position: fixed;
    border-radius: 20px;
    border: 1px solid ${props => props.theme['gray-800']};
-   background: radial-gradient(${props => props.theme['blue-900']}, ${props => props.theme['black']});
-   z-index: 1000;
+   backdrop-filter: blur(10.3px);
+
+
+
    
 
    svg{
@@ -53,8 +57,7 @@ export const NavContent = styled.nav`
 
 export const DevTitle = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 
     h1{
       font-size: 1.2rem;
