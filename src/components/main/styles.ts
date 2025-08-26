@@ -25,7 +25,7 @@ export const HomeMainContent = styled.div`
     width: 400px;
     height: 400px;
     border-radius: 100%;
-    border: 1rem solid ${props => props.theme['blue-500']}
+    border: 1rem solid ${props => props.theme['blue-900']};
   }
 
 

@@ -1,10 +1,12 @@
 'use client'
 import Link from "next/link";
-import { DevTitle, NavContent, NavLinksContent } from "./styles";
+import { DevTitle, NavContent, NavLinksContent, NavRoot } from "./styles";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../button/component";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "../../../public/logo-thiago-spadari-dev-not-background.png"
 
 export function NavBar() {
     const [isOpenMobileNavBar, setIsOpenMobileNabBar] = useState<boolean>(false)
@@ -15,10 +17,10 @@ export function NavBar() {
     const pathname = usePathname()
 
     return (
-        <NavContent>
+       <NavRoot>
+         <NavContent>
             <DevTitle>
-                <h1>Thiago Spadari Dev</h1>
-                <p>Full-Stack & Moblie Developer</p>
+                <Image src={logo} width={70} height={70} alt=""></Image>
             </DevTitle>
             <NavLinksContent className={`${isOpenMobileNavBar ? 'open' : ''}`}>
                 {pathname === "/" ?
@@ -40,5 +42,6 @@ export function NavBar() {
 
             {isOpenMobileNavBar && pathname === "/" ? <X onClick={ClickOpenMobileNavBar} /> : <Menu onClick={ClickOpenMobileNavBar} />}
         </NavContent>
+       </NavRoot>
     )
 }

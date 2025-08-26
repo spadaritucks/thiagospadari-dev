@@ -1,15 +1,28 @@
 import styled from "styled-components";
 
+
+export const NavRoot = styled.div`
+  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 0 30px;
+
+`
+
 export const NavContent = styled.nav`
    
-   width: 100%;
-   height: 90px;
-
+   width: 95%;
+   height: 70px;
    display: flex;
    align-items: center;
    justify-content: space-between;
    position: fixed;
-   background-color: ${props => props.theme['gray-700']};
+   border-radius: 20px;
+   border: 1px solid ${props => props.theme['gray-800']};
+   background: radial-gradient(${props => props.theme['blue-900']}, ${props => props.theme['black']});
    z-index: 1000;
    
 
@@ -44,12 +57,12 @@ export const DevTitle = styled.div`
     align-items: flex-end;
 
     h1{
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color : ${props => props.theme['white']};
     }
 
     p{
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color : ${props => props.theme['white']};
       margin-left: 120px;
       
