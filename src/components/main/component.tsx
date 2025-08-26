@@ -4,7 +4,8 @@ import Image from "next/image";
 import thiagoImage from '@/assets/thiago.jpg'
 import { HomeAboutMeContent, HomeAboutMeTextContent, HomeButtonContent, HomeContent, HomeMainContent, HomeTextContent } from "./styles";
 import { Button } from "../button/component";
-import { NavBar } from "../navbar/component";
+
+
 
 
 interface MainProps {
@@ -19,7 +20,7 @@ export function Main({ id }: MainProps) {
       transition={{ duration: 0.7, ease: 'easeInOut' }}
       id={id}>
       <video autoPlay loop muted playsInline className="back-video" src="./background-tsd.mp4" />
-  
+
       <HomeMainContent>
 
         <HomeTextContent>
@@ -44,6 +45,7 @@ export function Main({ id }: MainProps) {
         </HomeTextContent>
         <Link href="https://github.com/spadaritucks"><Image src={thiagoImage} alt="" /></Link>
       </HomeMainContent>
+
       <HomeAboutMeContent>
         <h2>About Me</h2>
         <HomeAboutMeTextContent>

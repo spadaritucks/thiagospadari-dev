@@ -93,21 +93,22 @@ export const NavLinksContent = styled.div`
    @media(max-width: 990px){
       flex-direction: column;
       justify-content: space-around;
-      background: ${props => props.theme['gray-700']};
       width: 100%;
       height: 270px;
       position: absolute;
-      opacity: 0;
+      z-index: inherit;
       top: -270px;
       left: 0;
       right: 0;
       transition: all 0.3s;
+      border-radius: 20px;
      
 
       &.open{
-         top: 90px;
-         opacity: 1;
+         top: 90px;         
+         background: linear-gradient(to top,  rgba(0, 0, 0, 0.9),  rgba(22, 36, 86, 0.9));
          transition: all 0.3s;
+         
       }
    } 
 

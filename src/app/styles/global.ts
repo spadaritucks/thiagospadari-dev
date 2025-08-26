@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body{
-   background: radial-gradient(${props => props.theme['blue-950']}, ${props => props.theme['black']});
+   background: linear-gradient(to right,${props => props.theme['blue-950']}, ${props => props.theme['black']});
  }
 
  html{

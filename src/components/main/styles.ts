@@ -145,6 +145,8 @@ export const HomeAboutMeContent = styled(motion.div)`
  gap: 20px;
  min-height: 60vh;
 
+ 
+
  h2{
     font-size: 2rem;
     font-weight: bold;
@@ -160,6 +162,7 @@ export const HomeAboutMeTextContent = styled.div`
    width: 700px;
    text-align: center;
    padding: 0 20px;
+
 
   p{
     font-size: 1.2rem;
