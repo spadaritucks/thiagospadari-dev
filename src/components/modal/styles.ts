@@ -18,7 +18,7 @@ export const ModalOverlay = styled.div`
   inset: 0;
   background-color: ${props => props.theme['gray-900']};
   opacity: 0.4;
-  z-index: 50;
+  z-index: 1000;
 `
 
 export const ModalContent = styled.div`
