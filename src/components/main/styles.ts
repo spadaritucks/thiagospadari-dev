@@ -18,6 +18,7 @@ export const HomeContent = styled(motion.section)`
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    opacity: 0.7;
   }
 `
 
@@ -76,7 +77,7 @@ export const HomeTextContent = styled.div`
 
   p {
     font-size: 1rem;
-    color: ${props => props.theme['gray-300']};
+    color: ${props => props.theme['white']};
   }
 
 

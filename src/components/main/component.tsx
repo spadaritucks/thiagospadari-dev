@@ -25,7 +25,7 @@ export function Main({ id }: MainProps) {
         <HomeTextContent>
           <h2>
             <span className="typing typing-1">
-              Hello, I'm&nbsp; <span style={{ color: "#3b82f6" }}>Thiago Spadari</span>
+              Hello, I'm&nbsp; <span style={{ color: "#1041f3" }}>Thiago Spadari</span>
             </span>
           </h2>
           <p>
