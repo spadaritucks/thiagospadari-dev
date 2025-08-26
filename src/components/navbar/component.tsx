@@ -28,9 +28,6 @@ export function NavBar() {
                         <Link href="#projects">Projects</Link>
                         <Link href="#contact">Contact</Link>
                     </> : null}
-                <Button name="Login Admin" variant="primary">
-                    <Link href="/login">Login Admin</Link>
-                </Button>
                 {pathname === "/login" ?
                     <>
                         <Button name="Back" variant="destructive">

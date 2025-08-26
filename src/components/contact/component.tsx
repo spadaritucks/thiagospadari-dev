@@ -25,9 +25,9 @@ export function Contact({ id }: ContactProps) {
                     <ContactSvg><Github /></ContactSvg>
                     <p>@spadaritucks</p>
                 </ContactItem >
-                <ContactItem href="mailto:thiago.spadari02@gmail.com">
+                <ContactItem href="mailto:thiagospadaridev@gmail.com">
                     <ContactSvg><Mail /></ContactSvg>
-                    <p>thiago.spadari02@gmail.com</p>
+                    <p>thiagospadaridev@gmail.com</p>
                 </ContactItem>
                 <ContactItem href="https://wa.me/5511860599793">
                     <ContactSvg><Phone /></ContactSvg>
