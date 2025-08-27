@@ -3,32 +3,34 @@ import styled from "styled-components";
 
 export const NavRoot = styled.div`
   
-  width: 100%;
+  width: 95%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  padding: 0 30px;
+  height: auto;
+  border: 1px solid ${props => props.theme['gray-800']};
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  margin-top: 10px ;
+  border-radius: 20px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 2000;
+  backdrop-filter: blur(10.3px);
+
+
   
 `
 
 export const NavContent = styled.nav`
    
-   width: 98%;
-   height: 90px;
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   border-radius: 20px;
-   border: 1px solid ${props => props.theme['gray-800']};
-   backdrop-filter: blur(10.3px);
-
-
-
-   
 
    svg{
       color : ${props => props.theme['white']};
@@ -82,6 +84,7 @@ export const NavLinksContent = styled.div`
    a{
       text-decoration: none;
       color: ${props => props.theme['white']};
+      font-weight: 700;
    }
 
    a:hover{
@@ -91,25 +94,8 @@ export const NavLinksContent = styled.div`
    }
 
    @media(max-width: 990px){
-      flex-direction: column;
-      justify-content: space-around;
-      width: 100%;
-      height: 270px;
-      position: absolute;
-      z-index: inherit;
-      top: -270px;
-      left: 0;
-      right: 0;
-      transition: all 0.3s;
-      border-radius: 20px;
+      display: none;
      
-
-      &.open{
-         top: 90px;         
-         background: linear-gradient(to top,  rgba(0, 0, 0, 0.9),  rgba(22, 36, 86, 0.9));
-         transition: all 0.3s;
-         
-      }
    } 
 
 

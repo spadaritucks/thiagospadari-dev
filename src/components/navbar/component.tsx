@@ -7,6 +7,7 @@ import { Button } from "../button/component";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../../../public/logo-thiago-spadari-dev-not-background.png"
+import MobileNavigationBar from "../mobile-nav-bar/component";
 
 export function NavBar() {
     const [isOpenMobileNavBar, setIsOpenMobileNabBar] = useState<boolean>(false)
@@ -23,7 +24,7 @@ export function NavBar() {
                 <Image src={logo} width={70} height={70} alt=""></Image>
                 <h1>Thiago Spadari DEV <br/> <span style={{fontSize : 12, fontWeight : 400}}>Full Stack Developer</span></h1>
             </DevTitle>
-            <NavLinksContent className={`${isOpenMobileNavBar ? 'open' : ''}`}>
+            <NavLinksContent>
                 {pathname === "/" ?
                     <>
                         <Link href="#about-me">About Me</Link>
@@ -43,6 +44,7 @@ export function NavBar() {
 
             {isOpenMobileNavBar && pathname === "/" ? <X onClick={ClickOpenMobileNavBar} /> : <Menu onClick={ClickOpenMobileNavBar} />}
         </NavContent>
+        <MobileNavigationBar isOpenMobileNavBar={isOpenMobileNavBar}/>
        </NavRoot>
     )
 }
