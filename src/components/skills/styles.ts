@@ -5,12 +5,11 @@ export const SkillsContent = styled.section`
    
    display: flex;
    flex-direction: column;
-   align-items: center;
-   justify-content: flex-start;
    gap: 30px;
    width: 100%;
    min-height: 80vh;
    margin: 4rem 0;
+   
 
    
  h2{
@@ -18,10 +17,18 @@ export const SkillsContent = styled.section`
     font-weight: bold;
     color: ${props => props.theme['white']};
 
- }
+ } 
 
- 
+`
 
+export const SkillsTitle = styled.div`
+
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    
 `
 
 export const SkillsGridContent = styled(motion.div)`

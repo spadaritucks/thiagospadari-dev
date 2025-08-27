@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SkillsCardSkeletonContent = styled.div`
 
-   background-color: ${props => props.theme['gray-300']};
+   background-color: ${props => props.theme['blue-950']};
    border-top-left-radius: 20px;
    width: 120px;
    height: 120px;

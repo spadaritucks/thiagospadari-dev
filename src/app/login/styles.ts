@@ -20,7 +20,8 @@ export const LoginContent = styled.section`
    width: 350px;
    height: 350px;
    border-radius: 20px;
-   background-color: ${props => props.theme['gray-900']};
+   background: linear-gradient(to bottom,${props => props.theme['blue-950']}, ${props => props.theme['black']});
+   box-shadow: 2px 2px 2px 2px ,${props => props.theme['gray-700']} ;
    color: ${props => props.theme['white']};
 
 `

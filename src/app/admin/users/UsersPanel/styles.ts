@@ -32,14 +32,14 @@ export const UsersTable = styled.table`
     width: 90%;
     border-collapse: collapse;
 
-    thead tr, tbody tr {
-        border: 2px solid ${props => props.theme['gray-600']};
+   thead tr, tbody tr {
+        border: 2px solid ${props => props.theme['gray-400']};
         height: 40px;
         font-size: 0.9rem;
         border-radius: 10px;
 
         &:hover {
-            background-color: ${props => props.theme['gray-600']};
+            background-color: ${props => props.theme['gray-700']};
         }
     }
 

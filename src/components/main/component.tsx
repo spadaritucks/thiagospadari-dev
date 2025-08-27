@@ -4,6 +4,8 @@ import Image from "next/image";
 import thiagoImage from '@/assets/thiago.jpg'
 import { HomeAboutMeContent, HomeAboutMeTextContent, HomeButtonContent, HomeContent, HomeMainContent, HomeTextContent } from "./styles";
 import { Button } from "../button/component";
+import BackgroundVideo from "../background-video/component";
+
 
 
 
@@ -15,13 +17,15 @@ interface MainProps {
 export function Main({ id }: MainProps) {
   return (
     <HomeContent
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, ease: 'easeInOut' }}
       id={id}>
-      <video autoPlay loop muted playsInline className="back-video" src="./background-tsd.mp4" />
+         <BackgroundVideo src="./background-tsd.mp4"/>
+            
+      <HomeMainContent
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: 'easeInOut' }}
+      >
 
-      <HomeMainContent>
 
         <HomeTextContent>
           <h2>
@@ -44,10 +48,14 @@ export function Main({ id }: MainProps) {
           </HomeButtonContent>
         </HomeTextContent>
         <Link href="https://github.com/spadaritucks"><Image src={thiagoImage} alt="" /></Link>
+
       </HomeMainContent>
+
 
       <HomeAboutMeContent>
         <h2>About Me</h2>
+         <BackgroundVideo src="./background-tsd (2).mp4"/>
+        
         <HomeAboutMeTextContent>
           <p>Hello, I'm Thiago Spadari, a web developer focused on front-end and back-end development.
             I work on creating responsive interfaces with a focus on UI/UX, combining user experience with performance,

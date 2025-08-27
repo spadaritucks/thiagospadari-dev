@@ -1,28 +1,16 @@
 import styled from "styled-components";
 import { motion } from "motion/react"
 
-export const HomeContent = styled(motion.section)`
+export const HomeContent = styled.section`
   
   display: flex; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-
-  
-  .back-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.7;
-  }
 `
 
-export const HomeMainContent = styled.div`
+export const HomeMainContent = styled(motion.div)`
 
   display: flex;
   align-items: center;
@@ -57,6 +45,8 @@ export const HomeMainContent = styled.div`
       height: 300px;
     }
   }
+
+
 
 
 
@@ -144,6 +134,7 @@ export const HomeAboutMeContent = styled(motion.div)`
  justify-content: center;
  gap: 20px;
  min-height: 60vh;
+ position: relative;
 
  
 

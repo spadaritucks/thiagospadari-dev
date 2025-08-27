@@ -10,12 +10,19 @@ export const GlobalStyle = createGlobalStyle`
  }
 
  body{
-   background: linear-gradient(to right,${props => props.theme['blue-950']}, ${props => props.theme['black']});
+   background: linear-gradient(to left,${props => props.theme['blue-950']}
+    , ${props => props.theme['black']},
+    ${props => props.theme['blue-800']}
+    
+    );
  }
 
  html{
   scroll-behavior: smooth;
  }
+html, body {
+   scroll-snap-type: y mandatory;
+} 
 
 
 

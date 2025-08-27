@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+
 import styled from "styled-components";
 
 export const SkillsCardContent = styled.div`
@@ -10,7 +10,7 @@ export const SkillsCardContent = styled.div`
    text-align: center;
    gap: 10px;
    border-top-left-radius: 20px;
-   background: radial-gradient(${props => props.theme['blue-900']}, ${props => props.theme['black']});
+   background: linear-gradient(to bottom,${props => props.theme['blue-950']}, ${props => props.theme['black']});
    border-bottom: 4px solid ${props => props.theme['blue-900']};
    padding: 15px 20px;
    color: ${props => props.theme['gray-400']};

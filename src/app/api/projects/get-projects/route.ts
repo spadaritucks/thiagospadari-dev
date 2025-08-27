@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { Underdog } from "next/font/google";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -8,11 +9,14 @@ export async function GET(req: NextRequest) {
     const searchParams = req.nextUrl.searchParams
     const pageHighlightsParam = searchParams.get('pageIndexHighlights');
     const pagePersonalParam = searchParams.get('pageIndexPersonal');
+    const pageAllParam = searchParams.get('pageIndexAll');
     
     const pageHighlights = pageHighlightsParam !== null ? Number(pageHighlightsParam) : undefined;
     const pagePersonal = pagePersonalParam !== null ? Number(pagePersonalParam) : undefined;
+    const pageAll = pageAllParam !== null ? Number(pageAllParam) : undefined;
     
-    const pageIndex = pageHighlights !== undefined ? pageHighlights : (pagePersonal !== undefined ? pagePersonal : 0);
+    const pageIndex = pageHighlights !== undefined ? pageHighlights : pagePersonal !== undefined ? pagePersonal :
+    pageAll !== undefined ? pageAll : 0;
     
     const pageSize = Number(searchParams.get('pageSize'))
     

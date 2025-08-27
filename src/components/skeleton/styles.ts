@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const SkeletonContent = styled.div`
    
-   background-color: ${props => props.theme['gray-600']};
+   background-color: ${props => props.theme['blue-950']};
    border-radius: 10px;
    height: 20px;
 

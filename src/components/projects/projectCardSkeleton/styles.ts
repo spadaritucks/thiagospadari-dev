@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProjectCardSkeletonContent = styled.div`
   
-    background-color: ${props => props.theme['gray-600']};
+  background-color: ${props => props.theme['blue-950']};
     width: 400px;
     height: 200px;
     z-index: 1;

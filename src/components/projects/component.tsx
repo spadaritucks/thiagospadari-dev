@@ -1,13 +1,14 @@
 'use client'
 import { useQuery } from "@tanstack/react-query";
 import { ProjectCard } from "./projectCard/component";
-import { ProjectsContainer, ProjectsContainers, ProjectsContent } from "./styles";
+import { ProjectsContainer, ProjectsContainers, ProjectsContent, ProjectTitle } from "./styles";
 import { api } from "@/lib/axios";
 import { GetPaginatedProjectsResponse } from "@/RequestTypes/GetPaginatedProjectsResponse";
 import { z } from "zod";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Pagination } from "../pagination/component";
 import { ProjectCardSkeleton } from "./projectCardSkeleton/component";
+import Separator from "../separator/component";
 
 interface ProjectsProps {
     id?: string;
@@ -62,7 +63,7 @@ export function Projects({ id }: ProjectsProps) {
         params.set('pageHighlights', (newPageIndex + 1).toString());
         router.replace(`${pathname}?${params.toString()}#projects`);
     }
-    
+
     function handlePaginatePersonal(newPageIndex: number) {
         const params = new URLSearchParams(searchParams.toString());
         params.set('pagePersonal', (newPageIndex + 1).toString());
@@ -73,7 +74,10 @@ export function Projects({ id }: ProjectsProps) {
         <ProjectsContent id={id}>
 
             <ProjectsContainers>
-                <h2>Highlights | Most Relevant Projects</h2>
+                <ProjectTitle>
+                    <h2>Highlights | Most Relevant Projects</h2>
+                    <Separator color="#1e3a8a" width="80%" height="4px" />
+                </ProjectTitle>
                 <ProjectsContainer
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -100,7 +104,11 @@ export function Projects({ id }: ProjectsProps) {
                     perPage={highlights.meta.perPage}
                 />}
 
-                <h2>Personal | Experimental Projects</h2>
+
+                <ProjectTitle>
+                    <h2>Personal | Experimental Projects</h2>
+                    <Separator color="#1e3a8a" width="80%" height="4px" />
+                </ProjectTitle>
                 <ProjectsContainer
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}

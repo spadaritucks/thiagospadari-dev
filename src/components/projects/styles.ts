@@ -30,6 +30,16 @@ export const ProjectsContainers = styled.div`
 
 `
 
+export const ProjectTitle = styled.div`
+
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    
+`
+
 export const ProjectsContainer = styled(motion.div)`
    
    display: grid;

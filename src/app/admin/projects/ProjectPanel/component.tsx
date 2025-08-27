@@ -26,28 +26,29 @@ export default function ProjectsPanel() {
     const router = useRouter()
     const queryClient = useQueryClient()
 
-    const pageIndex = z.coerce
+    const pageIndexAll = z.coerce
         .number()
         .transform(page => page - 1)
-        .parse(searchParams.get('pageIndex') ?? "1")
+        .parse(searchParams.get('pageIndexAll') ?? "1")
+
 
 
     const { data, isLoading } = useQuery({
         queryFn: async () => {
             const response = await api.get<GetPaginatedProjectsResponse>(`/projects/get-projects`, {
                 params: {
-                    pageIndex,
+                    pageIndexAll,
                     pageSize: 10
                 }
             })
             return response.data
         },
-        queryKey: ['projects', pageIndex]
+        queryKey: ['projects', pageIndexAll]
     })
 
     function HandlePaginate(newPageIndex: number) {
         const params = new URLSearchParams(searchParams.toString())
-        params.set('pageIndex', (newPageIndex + 1).toString())
+        params.set('pageIndexAll', (newPageIndex + 1).toString())
 
         router.replace(`${pathname}?${params.toString()}`);
 
@@ -130,7 +131,7 @@ export default function ProjectsPanel() {
                 </ProjectsTable>
                 {data?.meta && <Pagination
                     onPageChange={HandlePaginate}
-                    pageIndex={pageIndex}
+                    pageIndex={pageIndexAll}
                     totalCount={data.meta.totalCount}
                     perPage={data.meta.perPage}
                 />}
