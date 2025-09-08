@@ -109,11 +109,7 @@ export function Projects({ id }: ProjectsProps) {
                     <h2>Personal | Experimental Projects</h2>
                     <Separator color="#1e3a8a" width="80%" height="4px" />
                 </ProjectTitle>
-                <ProjectsContainer
-                    initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, ease: 'easeInOut' }}
-                >
+                <ProjectsContainer>
                     {personalIsLoading && <ProjectCardSkeleton />}
                     {personal?.projects && personal.projects.length > 0 ? personal.projects.map((project, index) =>
                         <ProjectCard

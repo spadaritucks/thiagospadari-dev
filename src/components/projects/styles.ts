@@ -40,7 +40,7 @@ export const ProjectTitle = styled.div`
     
 `
 
-export const ProjectsContainer = styled(motion.div)`
+export const ProjectsContainer = styled.div`
    
    display: grid;
    grid-template-columns: repeat(3, 1fr);
